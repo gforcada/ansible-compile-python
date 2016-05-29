@@ -36,6 +36,8 @@ Ubuntu 14.04 (trusty)
 
 Example Playbook
 ================
+::
+
     - hosts: servers
       roles:
          - role: gforcada.compile-python
