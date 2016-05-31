@@ -1,0 +1,130 @@
+---
+##
+# Dependencies
+##
+- name: Deps | Install compile time depdendencies
+  become: true
+  apt:
+    name={{ item }}
+    state=latest
+  with_items:
+    - autotools-dev
+    - blt-dev
+    - bzip2
+    - dpkg-dev
+    - g++-multilib
+    - gcc-multilib
+    - libbluetooth-dev
+    - libbz2-dev
+    - libexpat1-dev
+    - libffi-dev
+    - libffi6
+    - libffi6-dbg
+    - libgdbm-dev
+    - libgpm2
+    - libncursesw5-dev
+    - libreadline-dev
+    - libsqlite3-dev
+    - libssl-dev
+    - libtinfo-dev
+    - mime-support
+    - net-tools
+    - netbase
+    - quilt
+    - tk-dev
+    - zlib1g-dev
+
+- name: Deps 35 | Install compile time dependencies)
+  become: true
+  apt:
+    name={{ item }}
+    state=latest
+  with_items:
+    - liblzma-dev
+
+##
+# Download
+##
+
+- name: py26 | Download
+  get_url:
+    url=https://www.python.org/ftp/python/2.6.9/Python-2.6.9.tar.xz
+    dest=/tmp/py26.tar.xz
+    cheksum=md5:933a811f11e3db3d73ae492f6c3a7a76
+  when: python_26
+
+- name: py27 | Download
+  get_url:
+    url=https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tar.xz
+    dest=/tmp/py27.tar.xz
+    checksum=md5:1dbcc848b4cd8399a8199d000f9f823c
+  when: python_27
+
+- name: py35 | Download
+  get_url:
+    url=https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tar.xz
+    dest=/tmp/py35.tar.xz
+    checksum=md5:e9ea6f2623fffcdd871b7b19113fde80
+  when: python_35
+
+##
+# Uncompress
+##
+
+- name: py26 | Uncompress
+  unarchive:
+    src=/tmp/py26.tar.xz
+    dest=/tmp
+    copy=no
+  when: python_26
+
+- name: py27 | Uncompress
+  unarchive:
+    src=/tmp/py27.tar.xz
+    dest=/tmp
+    copy=no
+  when: python_27
+
+- name: py35 | Uncompress
+  unarchive:
+    src=/tmp/py35.tar.xz
+    dest=/tmp
+    copy=no
+  when: python_35
+
+##
+# Compile and install
+##
+
+- name: py26 | Compile and install
+  become: true
+  shell: "{{ item }}"
+  args:
+    chdir: /tmp/Python-2.6.9
+  with_items:
+    - ./configure --prefix /srv/python2.6.9
+    - make
+    - make install
+  when: python_26
+
+- name: py27 | Compile and install
+  become: true
+  shell: "{{ item }}"
+  args:
+    chdir: /tmp/Python-2.7.11
+  with_items:
+    - ./configure --prefix /srv/python2.7.11
+    - make
+    - make install
+  when: python_27
+
+- name: py35 | Compile and install
+  become: true
+  shell: "{{ item }}"
+  args:
+    chdir: /tmp/Python-3.5.1
+  with_items:
+    - ./configure --prefix /srv/python3.5.1
+    - make
+    - make install
+  when: python_35

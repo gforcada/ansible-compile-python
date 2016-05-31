@@ -24,11 +24,9 @@ None
 
 Role Variables
 ==============
-* python_versions
-
-  The versions of python to install,
-  as a list of dictionaries containing one key "version" and the version number as a string.
-  Defaults to: [{version: "2.6"}, {version: "2.7"}, {version: "3.5"}]
+* python_26: ``true/false`` (defaults to **false**)
+* python_27: ``true/false`` (defaults to **true**)
+* python_35: ``true/false`` (defaults to **true**)
 
 Dependencies
 ============
@@ -40,11 +38,11 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - role: gforcada.compile-python
+        - role: gforcada.compile-python
       vars:
-         python-versions:
-           - version: 2.7
-           - version: 3.5
+        - python_26: true
+        - python_27: true
+        - python_35: true
 
 License
 =======
