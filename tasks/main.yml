@@ -41,6 +41,7 @@
     state=latest
   with_items:
     - liblzma-dev
+  when: python_35
 
 ##
 # Download
