@@ -1,4 +1,30 @@
 ---
+base_install_folder: "/srv/"
+
 python_26: false
 python_27: true
 python_35: true
+
+py26_version: "2.6.9"
+py26_url: "https://www.python.org/ftp/python/{{ py26_version }}/Python-{{ py26_version }}.tar.xz"
+py26_md5: "933a811f11e3db3d73ae492f6c3a7a76"
+py26_tar_file: "/tmp/py{{ py26_version }}.tar.xz"
+py26_sources: "/tmp/Python-{{ py26_version }}"
+py26_install: "{{ base_install_folder }}/python{{ py26_version }}"
+py26_bin: "{{ py26_install }}/bin/python2.6"
+
+py27_version: "2.7.11"
+py27_url: "https://www.python.org/ftp/python/{{ py27_version }}/Python-{{ py27_version }}.tar.xz"
+py27_md5: "1dbcc848b4cd8399a8199d000f9f823c"
+py27_tar_file: "/tmp/py{{ py27_version }}.tar.xz"
+py27_sources: "/tmp/Python-{{ py27_version }}"
+py27_install: "{{ base_install_folder }}/python{{ py27_version }}"
+py27_bin: "{{ py27_install }}/bin/python2.7"
+
+py35_version: "3.5.1"
+py35_url: "https://www.python.org/ftp/python/{{ py35_version }}/Python-{{ py35_version }}.tar.xz"
+py35_md5: "e9ea6f2623fffcdd871b7b19113fde80"
+py35_tar_file: "/tmp/py{{ py35_version }}.tar.xz"
+py35_sources: "/tmp/Python-{{ py35_version }}"
+py35_install: "{{ base_install_folder }}/python{{ py35_version }}"
+py35_bin: "{{ py35_install }}/bin/python3.5"
