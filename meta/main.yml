@@ -8,7 +8,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - trusty
-  categories:
+  galaxy_tags:
     - development
     - python
 dependencies: []
