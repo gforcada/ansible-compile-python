@@ -1,0 +1,88 @@
+---
+
+##
+# Download
+##
+
+- name: py26 | Download
+  get_url:
+    url="{{ py26_url }}"
+    dest="{{ py26_tar_file }}"
+    checksum="md5:{{ py26_md5 }}"
+  when: python_26
+
+- name: py27 | Download
+  get_url:
+    url="{{ py27_url }}"
+    dest="{{ py27_tar_file }}"
+    checksum="md5:{{ py27_md5 }}"
+  when: python_27
+
+- name: py35 | Download
+  get_url:
+    url="{{ py35_url }}"
+    dest="{{ py35_tar_file }}"
+    checksum="md5:{{ py35_md5 }}"
+  when: python_35
+
+##
+# Uncompress
+##
+
+- name: py26 | Uncompress
+  unarchive:
+    src={{ py26_tar_file }}
+    dest=/tmp
+    copy=no
+  when: python_26
+
+- name: py27 | Uncompress
+  unarchive:
+    src={{ py27_tar_file }}
+    dest=/tmp
+    copy=no
+  when: python_27
+
+- name: py35 | Uncompress
+  unarchive:
+    src={{ py35_tar_file }}
+    dest=/tmp
+    copy=no
+  when: python_35
+
+##
+# Compile and install
+##
+
+- name: py26 | Compile and install
+  become: true
+  shell: "{{ item }}"
+  args:
+    chdir: "{{ py26_sources }}"
+  with_items:
+    - "./configure --prefix {{ py26_install }}"
+    - make
+    - make install
+  when: python_26
+
+- name: py27 | Compile and install
+  become: true
+  shell: "{{ item }}"
+  args:
+    chdir: "{{ py27_sources }}"
+  with_items:
+    - "./configure --prefix {{ py27_install }}"
+    - make
+    - make install
+  when: python_27
+
+- name: py35 | Compile and install
+  become: true
+  shell: "{{ item }}"
+  args:
+    chdir: "{{ py35_sources }}"
+  with_items:
+    - "./configure --prefix {{ py35_install }}"
+    - make
+    - make install
+  when: python_35

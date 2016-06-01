@@ -1,0 +1,37 @@
+---
+
+##
+# Virtualenv (only for 2.x)
+##
+
+- name: virtualenv | Download
+  get_url:
+    url="{{ venv_url }}"
+    dest="{{ venv_tar_file }}"
+    checksum="md5:{{ venv_md5 }}"
+  when: python_26 or python_27
+
+- name: virtualenv | Uncompress
+  unarchive:
+    src="{{ venv_tar_file }}"
+    dest=/tmp
+    copy=no
+  when: python_26 or python_27
+
+- name: py26 | Install virtualenv
+  become: true
+  shell: "{{ item }}"
+  args:
+    chdir: "{{ venv_sources }}"
+  with_items:
+    - "{{ py26_bin }} setup.py install"
+  when: python_26
+
+- name: py27 | Install virtualenv
+  become: true
+  shell: "{{ item }}"
+  args:
+    chdir: "{{ venv_sources }}"
+  with_items:
+    - "{{ py27_bin }} setup.py install"
+  when: python_27
