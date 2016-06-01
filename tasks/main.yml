@@ -112,7 +112,7 @@
   become: true
   shell: "{{ item }}"
   args:
-    chdir: "{{ python_27_sources }}"
+    chdir: "{{ py27_sources }}"
   with_items:
     - "./configure --prefix {{ py27_install }}"
     - make
@@ -123,7 +123,7 @@
   become: true
   shell: "{{ item }}"
   args:
-    chdir: "{{ python_35_sources }}"
+    chdir: "{{ py35_sources }}"
   with_items:
     - "./configure --prefix {{ py35_install }}"
     - make
