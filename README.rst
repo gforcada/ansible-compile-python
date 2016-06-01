@@ -13,10 +13,13 @@ On those occasions rather than replacing the version provided by your distributi
 *And that's what this ansible playbook is for!*
 
 Installs all necessary tools to build and install Python and then installs
-any given version of Python, so far Python 2.6, 2.7 and 3.5 are supported.
+any given version of Python.
 
-Adding support for any other version should be trivial though,
-so pull requests are always welcome.
+So far Python 2.6, 2.7 and 3.5 are supported,
+plus installing system dependencies to install (not done in this role) pillow.
+
+Adding support for other version should be trivial,
+pull requests welcome.
 
 Requirements
 ============
@@ -27,6 +30,7 @@ Role Variables
 * python_26: ``true/false`` (defaults to **false**)
 * python_27: ``true/false`` (defaults to **true**)
 * python_35: ``true/false`` (defaults to **true**)
+* pillow: ``true/false`` (defaults to **false**)
 
 Dependencies
 ============
