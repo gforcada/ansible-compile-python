@@ -38,7 +38,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-        - role: gforcada.compile-python
+        - gforcada.compile-python
       vars:
         - python_26: true
         - python_27: true
