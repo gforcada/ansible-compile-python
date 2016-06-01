@@ -1,5 +1,5 @@
 ---
-base_install_folder: "/srv/"
+base_install_folder: "/srv"
 
 python_26: false
 python_27: true
