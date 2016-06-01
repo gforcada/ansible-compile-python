@@ -5,6 +5,8 @@ python_26: false
 python_27: true
 python_35: true
 
+pillow: false
+
 py26_version: "2.6.9"
 py26_url: "https://www.python.org/ftp/python/{{ py26_version }}/Python-{{ py26_version }}.tar.xz"
 py26_md5: "933a811f11e3db3d73ae492f6c3a7a76"

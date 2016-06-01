@@ -2,7 +2,7 @@
 ##
 # Dependencies
 ##
-- name: Deps | Install compile time depdendencies
+- name: Python deps | Install compile time depdendencies
   become: true
   apt:
     name={{ item }}
@@ -34,7 +34,7 @@
     - tk-dev
     - zlib1g-dev
 
-- name: Deps 35 | Install compile time dependencies)
+- name: Python 3.5 deps | Install compile time dependencies
   become: true
   apt:
     name={{ item }}
@@ -165,3 +165,23 @@
   with_items:
     - "{{ py27_bin }} setup.py install"
   when: python_27
+
+##
+# Pillow
+##
+
+- name: Pillow deps | Install compile time depdendencies
+  become: true
+  apt:
+    name={{ item }}
+    state=latest
+  with_items:
+    - cmake
+    - libfreetype6-dev
+    - libjpeg8-dev
+    - liblcms2-dev
+    - libtiff5-dev
+    - libwebp-dev
+    - tcl8.6-dev
+    - tk8.6-dev
+  when: pillow
