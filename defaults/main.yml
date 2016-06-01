@@ -28,3 +28,8 @@ py35_tar_file: "/tmp/py{{ py35_version }}.tar.xz"
 py35_sources: "/tmp/Python-{{ py35_version }}"
 py35_install: "{{ base_install_folder }}/python{{ py35_version }}"
 py35_bin: "{{ py35_install }}/bin/python3.5"
+
+venv_url: "https://pypi.python.org/packages/5c/79/5dae7494b9f5ed061cff9a8ab8d6e1f02db352f3facf907d9eb614fb80e9/virtualenv-15.0.2.tar.gz"
+venv_md5: "0ed59863994daf1292827ffdbba80a63"
+venv_tar_file: "/tmp/virtualenv-15.0.2.tar.gz"
+venv_sources: "/tmp/virtualenv-15.0.2"
