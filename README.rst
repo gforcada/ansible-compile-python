@@ -16,7 +16,10 @@ Installs all necessary tools to build and install Python and then installs
 any given version of Python.
 
 So far Python 2.6, 2.7 and 3.5 are supported,
-plus installing system dependencies to install (not done in this role) pillow.
+plus installing system dependencies to install (not done in this role):
+
+- pillow
+- lxml
 
 Adding support for other version should be trivial,
 pull requests welcome.
@@ -31,6 +34,7 @@ Role Variables
 * python_27: ``true/false`` (defaults to **true**)
 * python_35: ``true/false`` (defaults to **true**)
 * pillow: ``true/false`` (defaults to **false**)
+* lxml: ``true/false`` (defaults to **false**)
 
 Dependencies
 ============

@@ -185,3 +185,19 @@
     - tcl8.6-dev
     - tk8.6-dev
   when: pillow
+
+##
+# lxml
+##
+
+- name: lxml deps | Install compile time dependencies
+  become: true
+  apt:
+    name={{ item }}
+    state=latest
+  with_items:
+    - libxml2
+    - libxml2-dev
+    - libxslt1.1
+    - libxslt1-dev
+  when: lxml

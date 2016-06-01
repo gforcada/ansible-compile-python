@@ -6,6 +6,7 @@ python_27: true
 python_35: true
 
 pillow: false
+lxml: false
 
 py26_version: "2.6.9"
 py26_url: "https://www.python.org/ftp/python/{{ py26_version }}/Python-{{ py26_version }}.tar.xz"
