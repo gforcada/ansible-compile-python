@@ -1,5 +1,10 @@
 ---
 
+- name: Update APT sources
+  become: true
+  apt:
+    update_cache=yes
+
 - name: Python deps | Install compile time depdendencies
   become: true
   apt:
