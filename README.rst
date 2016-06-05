@@ -52,6 +52,8 @@ Example Playbook
         - python_27: true
         - python_35: true
 
+There is an example ``Vagrantfile`` to test it locally.
+
 License
 =======
 BSD
