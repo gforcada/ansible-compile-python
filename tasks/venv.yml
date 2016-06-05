@@ -20,18 +20,20 @@
 
 - name: py26 | Install virtualenv
   become: true
-  shell: "{{ item }}"
+  command: "{{ item }}"
   args:
     chdir: "{{ venv_sources }}"
+    creates: "{{ py26_install }}/bin/virtualenv"
   with_items:
     - "{{ py26_bin }} setup.py install"
   when: python_26
 
 - name: py27 | Install virtualenv
   become: true
-  shell: "{{ item }}"
+  command: "{{ item }}"
   args:
     chdir: "{{ venv_sources }}"
+    creates: "{{ py27_install }}/bin/virtualenv"
   with_items:
     - "{{ py27_bin }} setup.py install"
   when: python_27

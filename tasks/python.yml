@@ -34,6 +34,7 @@
     src={{ py26_tar_file }}
     dest=/tmp
     copy=no
+    creates="{{ py26_sources }}"
   when: python_26
 
 - name: py27 | Uncompress
@@ -41,6 +42,7 @@
     src={{ py27_tar_file }}
     dest=/tmp
     copy=no
+    creates="{{ py27_sources }}"
   when: python_27
 
 - name: py35 | Uncompress
@@ -48,6 +50,7 @@
     src={{ py35_tar_file }}
     dest=/tmp
     copy=no
+    creates="{{ py35_sources }}"
   when: python_35
 
 ##
@@ -56,9 +59,10 @@
 
 - name: py26 | Compile and install
   become: true
-  shell: "{{ item }}"
+  command: "{{ item }}"
   args:
     chdir: "{{ py26_sources }}"
+    creates: "{{ py26_sources }}/Makefile"
   with_items:
     - "./configure --prefix {{ py26_install }}"
     - make
@@ -67,9 +71,10 @@
 
 - name: py27 | Compile and install
   become: true
-  shell: "{{ item }}"
+  command: "{{ item }}"
   args:
     chdir: "{{ py27_sources }}"
+    creates: "{{ py27_sources }}/Makefile"
   with_items:
     - "./configure --prefix {{ py27_install }}"
     - make
@@ -78,9 +83,10 @@
 
 - name: py35 | Compile and install
   become: true
-  shell: "{{ item }}"
+  command: "{{ item }}"
   args:
     chdir: "{{ py35_sources }}"
+    creates: "{{ py35_sources }}/Makefile"
   with_items:
     - "./configure --prefix {{ py35_install }}"
     - make
