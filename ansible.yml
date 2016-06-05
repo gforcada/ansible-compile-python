@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+    - ansible-compile-python
+  vars:
+    - python_26: true
+    - pillow: true
+    - lxml: true
