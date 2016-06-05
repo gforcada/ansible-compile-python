@@ -1,6 +1,28 @@
 ---
 
 ##
+# Check if python versions are already installed
+##
+
+- name: py26 | Check that py26 is still not installed
+  become: true
+  stat: path="{{ py26_bin }}"
+  register: py26_already_installed
+  ignore_errors: True
+
+- name: py27 | Check that py27 is still not installed
+  become: true
+  stat: path="{{ py27_bin }}"
+  register: py27_already_installed
+  ignore_errors: True
+
+- name: py35 | Check that py35 is still not installed
+  become: true
+  stat: path="{{ py35_bin }}"
+  register: py35_already_installed
+  ignore_errors: True
+
+##
 # Download
 ##
 
@@ -9,21 +31,21 @@
     url="{{ py26_url }}"
     dest="{{ py26_tar_file }}"
     checksum="md5:{{ py26_md5 }}"
-  when: python_26
+  when: python_26 and py26_already_installed.stat.exists == false
 
 - name: py27 | Download
   get_url:
     url="{{ py27_url }}"
     dest="{{ py27_tar_file }}"
     checksum="md5:{{ py27_md5 }}"
-  when: python_27
+  when: python_27 and py27_already_installed.stat.exists == false
 
 - name: py35 | Download
   get_url:
     url="{{ py35_url }}"
     dest="{{ py35_tar_file }}"
     checksum="md5:{{ py35_md5 }}"
-  when: python_35
+  when: python_35 and py35_already_installed.stat.exists == false
 
 ##
 # Uncompress
@@ -35,7 +57,7 @@
     dest=/tmp
     copy=no
     creates="{{ py26_sources }}"
-  when: python_26
+  when: python_26 and py26_already_installed.stat.exists == false
 
 - name: py27 | Uncompress
   unarchive:
@@ -43,7 +65,7 @@
     dest=/tmp
     copy=no
     creates="{{ py27_sources }}"
-  when: python_27
+  when: python_27 and py27_already_installed.stat.exists == false
 
 - name: py35 | Uncompress
   unarchive:
@@ -51,7 +73,7 @@
     dest=/tmp
     copy=no
     creates="{{ py35_sources }}"
-  when: python_35
+  when: python_35 and py35_already_installed.stat.exists == false
 
 ##
 # Compile and install
@@ -62,33 +84,30 @@
   command: "{{ item }}"
   args:
     chdir: "{{ py26_sources }}"
-    creates: "{{ py26_sources }}/Makefile"
   with_items:
     - "./configure --prefix {{ py26_install }}"
     - make
     - make install
-  when: python_26
+  when: python_26 and py26_already_installed.stat.exists == false
 
 - name: py27 | Compile and install
   become: true
   command: "{{ item }}"
   args:
     chdir: "{{ py27_sources }}"
-    creates: "{{ py27_sources }}/Makefile"
   with_items:
     - "./configure --prefix {{ py27_install }}"
     - make
     - make install
-  when: python_27
+  when: python_27 and py27_already_installed.stat.exists == false
 
 - name: py35 | Compile and install
   become: true
   command: "{{ item }}"
   args:
     chdir: "{{ py35_sources }}"
-    creates: "{{ py35_sources }}/Makefile"
   with_items:
     - "./configure --prefix {{ py35_install }}"
     - make
     - make install
-  when: python_35
+  when: python_35 and py35_already_installed.stat.exists == false
