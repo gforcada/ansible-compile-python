@@ -1,7 +1,25 @@
 ---
 
 ##
-# Virtualenv (only for 2.x)
+# Check if virtualenv is already installed
+##
+
+- name: virtualenv | Check if virtualenv is already installed
+  become: true
+  stat: path="{{ py26_install }}/bin/virtualenv"
+  register: virtualenv_already_installed
+  ignore_errors: True
+  when: python_26
+
+- name: virtualenv | Check if virtualenv is already installed
+  become: true
+  stat: path="{{ py27_install }}/bin/virtualenv"
+  register: virtualenv_already_installed
+  ignore_errors: True
+  when: python_27
+
+##
+# Virtualenv (only for python 2.x)
 ##
 
 - name: virtualenv | Download
@@ -9,14 +27,14 @@
     url="{{ venv_url }}"
     dest="{{ venv_tar_file }}"
     checksum="md5:{{ venv_md5 }}"
-  when: python_26 or python_27
+  when: virtualenv_already_installed.stat.exists == false and (python_26 or python_27)
 
 - name: virtualenv | Uncompress
   unarchive:
     src="{{ venv_tar_file }}"
     dest=/tmp
     copy=no
-  when: python_26 or python_27
+  when: virtualenv_already_installed.stat.exists == false and (python_26 or python_27)
 
 - name: py26 | Install virtualenv
   become: true
@@ -26,7 +44,7 @@
     creates: "{{ py26_install }}/bin/virtualenv"
   with_items:
     - "{{ py26_bin }} setup.py install"
-  when: python_26
+  when: virtualenv_already_installed.stat.exists == false and python_26
 
 - name: py27 | Install virtualenv
   become: true
@@ -36,4 +54,4 @@
     creates: "{{ py27_install }}/bin/virtualenv"
   with_items:
     - "{{ py27_bin }} setup.py install"
-  when: python_27
+  when: virtualenv_already_installed.stat.exists == false and python_27
