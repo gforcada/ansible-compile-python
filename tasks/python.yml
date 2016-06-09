@@ -100,16 +100,37 @@
 # Compile and install
 ##
 
-- name: py24 | Compile and install
+- name: py24 | Configure sources
   become: true
-  command: "{{ item }}"
+  command: "./configure --prefix {{ py24_install }}"
   args:
     chdir: "{{ py24_sources }}"
-  with_items:
-    - "./configure --prefix {{ py24_install }}"
-    - make
-    - make install
   when: python_24 and py24_already_installed.stat.exists == false
+
+- name: py24 | Tweak sources
+  become: true
+  lineinfile:
+    dest="{{ py24_sources }}/Modules/Setup"
+    regexp=^#zlib(.*)
+    line=zlib\1
+    backrefs=yes
+  when: python_24 and py24_already_installed.stat.exists == false
+
+- name: py26 | Configure sources
+  become: true
+  command: "./configure --prefix {{ py26_install }}"
+  args:
+    chdir: "{{ py26_sources }}"
+  when: python_26 and py26_already_installed.stat.exists == false
+
+- name: py26 | Tweak sources
+  become: true
+  lineinfile:
+    dest="{{ py26_sources }}/Modules/Setup"
+    regexp=^#zlib(.*)
+    line=zlib\1
+    backrefs=yes
+  when: python_26 and py26_already_installed.stat.exists == false
 
 - name: py26 | Compile and install
   become: true
@@ -117,7 +138,6 @@
   args:
     chdir: "{{ py26_sources }}"
   with_items:
-    - "./configure --prefix {{ py26_install }}"
     - make
     - make install
   when: python_26 and py26_already_installed.stat.exists == false
