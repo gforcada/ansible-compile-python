@@ -4,6 +4,7 @@
 # role main options
 ##
 
+python_24: false
 python_26: false
 python_27: true
 python_35: true
@@ -17,6 +18,14 @@ lxml: false
 ##
 
 base_install_folder: "/srv"
+
+py24_version: "2.4.6"
+py24_url: "https://www.python.org/ftp/python/{{ py24_version }}/Python-{{ py24_version }}.tar.bz2"
+py24_md5: "76083277f6c7e4d78992f36d7ad9018d"
+py24_tar_file: "/tmp/py{{ py24_version }}.tar.bz2"
+py24_sources: "/tmp/Python-{{ py24_version }}"
+py24_install: "{{ base_install_folder }}/python{{ py24_version }}"
+py24_bin: "{{ py24_install }}/bin/python2.4"
 
 py26_version: "2.6.9"
 py26_url: "https://www.python.org/ftp/python/{{ py26_version }}/Python-{{ py26_version }}.tar.xz"
@@ -46,3 +55,8 @@ venv_url: "https://pypi.python.org/packages/5c/79/5dae7494b9f5ed061cff9a8ab8d6e1
 venv_md5: "0ed59863994daf1292827ffdbba80a63"
 venv_tar_file: "/tmp/virtualenv-15.0.2.tar.gz"
 venv_sources: "/tmp/virtualenv-15.0.2"
+
+venv24_url: "http://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.7.2.tar.gz"
+venv24_md5: "b5d63b05373a4344ae099a68875aae78"
+venv24_tar_file: "/tmp/virtualenv-1.7.2.tar.gz"
+venv24_sources: "/tmp/virtualenv-1.7.2"
