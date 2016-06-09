@@ -116,6 +116,16 @@
     backrefs=yes
   when: python_24 and py24_already_installed.stat.exists == false
 
+- name: py24 | Compile and install
+  become: true
+  command: "{{ item }}"
+  args:
+    chdir: "{{ py24_sources }}"
+  with_items:
+    - make
+    - make install
+  when: python_24 and py24_already_installed.stat.exists == false
+
 - name: py26 | Configure sources
   become: true
   command: "./configure --prefix {{ py26_install }}"
