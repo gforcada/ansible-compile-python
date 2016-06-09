@@ -6,6 +6,13 @@
 
 - name: virtualenv | Check if virtualenv is already installed
   become: true
+  stat: path="{{ py24_install }}/bin/virtualenv"
+  register: virtualenv24_already_installed
+  ignore_errors: True
+  when: python_24
+
+- name: virtualenv | Check if virtualenv is already installed
+  become: true
   stat: path="{{ py26_install }}/bin/virtualenv"
   register: virtualenv_already_installed
   ignore_errors: True
@@ -22,6 +29,13 @@
 # Virtualenv (only for python 2.x)
 ##
 
+- name: virtualenv for 2.4 | Download
+  get_url:
+    url="{{ venv24_url }}"
+    dest="{{ venv24_tar_file }}"
+    checksum="md5:{{ venv24_md5 }}"
+  when: virtualenv24_already_installed.stat.exists == false and (python_24)
+
 - name: virtualenv | Download
   get_url:
     url="{{ venv_url }}"
@@ -29,12 +43,29 @@
     checksum="md5:{{ venv_md5 }}"
   when: virtualenv_already_installed.stat.exists == false and (python_26 or python_27)
 
+- name: virtualenv for 2.4 | Uncompress
+  unarchive:
+    src="{{ venv24_tar_file }}"
+    dest=/tmp
+    copy=no
+  when: virtualenv24_already_installed.stat.exists == false and (python_24)
+
 - name: virtualenv | Uncompress
   unarchive:
     src="{{ venv_tar_file }}"
     dest=/tmp
     copy=no
   when: virtualenv_already_installed.stat.exists == false and (python_26 or python_27)
+
+- name: py24 | Install virtualenv
+  become: true
+  command: "{{ item }}"
+  args:
+    chdir: "{{ venv24_sources }}"
+    creates: "{{ py24_install }}/bin/virtualenv"
+  with_items:
+    - "{{ py24_bin }} setup.py install"
+  when: virtualenv24_already_installed.stat.exists == false and python_24
 
 - name: py26 | Install virtualenv
   become: true

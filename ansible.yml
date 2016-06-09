@@ -3,6 +3,7 @@
   roles:
     - ansible-compile-python
   vars:
+    - python_24: true
     - python_26: true
     - pillow: true
     - lxml: true
