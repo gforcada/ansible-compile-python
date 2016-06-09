@@ -95,6 +95,24 @@
     backrefs=yes
   when: python_26 and py26_already_installed.stat.exists == false
 
+- name: py26 | Tweak sources
+  become: true
+  lineinfile:
+    dest="{{ py26_sources }}/Modules/Setup"
+    regexp=^#_sha256(.*)
+    line=_sha256\1
+    backrefs=yes
+  when: python_26 and py26_already_installed.stat.exists == false
+
+- name: py26 | Tweak sources
+  become: true
+  lineinfile:
+    dest="{{ py26_sources }}/Modules/Setup"
+    regexp=^#_sha512(.*)
+    line=_sha512\1
+    backrefs=yes
+  when: python_26 and py26_already_installed.stat.exists == false
+
 - name: py26 | Compile and install
   become: true
   command: "{{ item }}"
