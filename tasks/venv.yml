@@ -48,7 +48,7 @@
     url="{{ venv27_url }}"
     dest="{{ venv27_tar_file }}"
     checksum="md5:{{ venv27_md5 }}"
-  when: python27 and virtualenv27_already_installed.stat.exists == false
+  when: python_27 and virtualenv27_already_installed.stat.exists == false
 
 ##
 # Uncompress
@@ -59,21 +59,21 @@
     src="{{ venv24_tar_file }}"
     dest=/tmp
     copy=no
-  when: python24 and virtualenv24_already_installed.stat.exists == false
+  when: python_24 and virtualenv24_already_installed.stat.exists == false
 
 - name: virtualenv for 2.6 | Uncompress
   unarchive:
     src="{{ venv26_tar_file }}"
     dest=/tmp
     copy=no
-  when: python26 and virtualenv26_already_installed.stat.exists == false
+  when: python_26 and virtualenv26_already_installed.stat.exists == false
 
 - name: virtualenv for 2.7 | Uncompress
   unarchive:
     src="{{ venv27_tar_file }}"
     dest=/tmp
     copy=no
-  when: python27 and virtualenv27_already_installed.stat.exists == false
+  when: python_27 and virtualenv27_already_installed.stat.exists == false
 
 ##
 # Install
@@ -87,7 +87,7 @@
     creates: "{{ py24_install }}/bin/virtualenv"
   with_items:
     - "{{ py24_bin }} setup.py install"
-  when: python24 and virtualenv24_already_installed.stat.exists == false
+  when: python_24 and virtualenv24_already_installed.stat.exists == false
 
 - name: py26 | Install virtualenv
   become: true
@@ -97,7 +97,7 @@
     creates: "{{ py26_install }}/bin/virtualenv"
   with_items:
     - "{{ py26_bin }} setup.py install"
-  when: python26 and virtualenv26_already_installed.stat.exists == false
+  when: python_26 and virtualenv26_already_installed.stat.exists == false
 
 - name: py27 | Install virtualenv
   become: true
@@ -107,4 +107,4 @@
     creates: "{{ py27_install }}/bin/virtualenv"
   with_items:
     - "{{ py27_bin }} setup.py install"
-  when: python27 and virtualenv27_already_installed.stat.exists == false
+  when: python_27 and virtualenv27_already_installed.stat.exists == false
