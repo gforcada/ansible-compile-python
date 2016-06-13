@@ -192,13 +192,34 @@
     - make install
   when: python_35 and py35_already_installed.stat.exists == false
 
-- name: create python_major_version symlinks
+##
+# Create Python major version symlinks
+##
+
+- name: p24 | Create python_major_version symlink
   file:
-    src={{ item.src }}
-    dest={{ item.dest }}
+    src={{ py24_install }}
+    dest='{{ base_install_folder }}/python{{ py24_major_version }}'
     state=link
-  with_items:
-    - { src: "{{ py24_install }}", dest: '{{ base_install_folder }}/python{{ py24_major_version }}'}
-    - { src: "{{ py26_install }}", dest: '{{ base_install_folder }}/python{{ py26_major_version }}'}
-    - { src: "{{ py27_install }}", dest: '{{ base_install_folder }}/python{{ py27_major_version }}'}
-    - { src: "{{ py35_install }}", dest: '{{ base_install_folder }}/python{{ py35_major_version }}'}
+  when: python_24 and py24_already_installed.stat.exists == false
+
+- name: p26 | Create python_major_version symlink
+  file:
+    src={{ py26_install }}
+    dest='{{ base_install_folder }}/python{{ py26_major_version }}'
+    state=link
+  when: python_26 and py26_already_installed.stat.exists == false
+
+- name: p27 | Create python_major_version symlink
+  file:
+    src={{ py27_install }}
+    dest='{{ base_install_folder }}/python{{ py27_major_version }}'
+    state=link
+  when: python_27 and py27_already_installed.stat.exists == false
+
+- name: p35 | Create python_major_version symlink
+  file:
+    src={{ py35_install }}
+    dest='{{ base_install_folder }}/python{{ py35_major_version }}'
+    state=link
+  when: python_35 and py35_already_installed.stat.exists == false
