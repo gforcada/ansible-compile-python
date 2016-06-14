@@ -24,6 +24,9 @@ plus installing system dependencies to install (not done in this role):
 Adding support for other version should be trivial,
 pull requests welcome.
 
+For ease of usage an easy to remember symlink is provided for each python version,
+i.e. ``/srv/python27``, ``/srv/python35`` and so on.
+
 Requirements
 ============
 None
@@ -63,10 +66,8 @@ Author Information
 ==================
 Gil Forcada Codinachs
 
-
 Contribute
 ==========
-
 Code can be found at: https://github.com/gforcada/ansible-compile-python
 
 Please report issues at: https://github.com/gforcada/ansible-compile-python/issues
