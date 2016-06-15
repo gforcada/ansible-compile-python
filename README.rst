@@ -43,6 +43,11 @@ Role Variables
 Dependencies
 ============
 Ubuntu 14.04 (trusty)
+Ubuntu 16.04 (xenial)
+
+.. note::
+   to run the role on *xenial* one first needs to ssh into the virtual machine and install python, i.e.:
+   ``sudo apt-get install python``.
 
 Example Playbook
 ================
