@@ -176,7 +176,7 @@
   args:
     chdir: "{{ py27_sources }}"
   with_items:
-    - "./configure --prefix {{ py27_install }}"
+    - "./configure --enable-optimizations --prefix {{ py27_install }}"
     - make
     - make install
   when: python_27 and py27_already_installed.stat.exists == false
@@ -187,7 +187,7 @@
   args:
     chdir: "{{ py35_sources }}"
   with_items:
-    - "./configure --prefix {{ py35_install }}"
+    - "./configure --enable-optimizations --prefix {{ py35_install }}"
     - make
     - make install
   when: python_35 and py35_already_installed.stat.exists == false
