@@ -7,7 +7,7 @@
 python_24: false
 python_26: false
 python_27: true
-python_35: true
+python_36: true
 
 pillow: false
 lxml: false
@@ -38,37 +38,40 @@ py26_install: "{{ base_install_folder }}/python{{ py26_version }}"
 py26_symlink_target: "{{ py26_install }}"
 py26_bin: "{{ py26_install }}/bin/python2.6"
 
-py27_version: "2.7.12"
+py27_version: "2.7.15"
 py27_major_version: "{{ py27_version|truncate(3, killwords=true, end='') }}"
 py27_url: "https://www.python.org/ftp/python/{{ py27_version }}/Python-{{ py27_version }}.tar.xz"
-py27_md5: "57dffcee9cee8bb2ab5f82af1d8e9a69"
+py27_md5: "a80ae3cc478460b922242f43a1b4094d"
 py27_tar_file: "/tmp/py{{ py27_version }}.tar.xz"
 py27_sources: "/tmp/Python-{{ py27_version }}"
 py27_install: "{{ base_install_folder }}/python{{ py27_version }}"
 py27_symlink_target: "{{ py27_install }}"
 py27_bin: "{{ py27_install }}/bin/python2.7"
 
-py35_version: "3.5.2"
-py35_major_version: "{{ py35_version|truncate(3, killwords=true, end='') }}"
-py35_url: "https://www.python.org/ftp/python/{{ py35_version }}/Python-{{ py35_version }}.tar.xz"
-py35_md5: "8906efbacfcdc7c3c9198aeefafd159e"
-py35_tar_file: "/tmp/py{{ py35_version }}.tar.xz"
-py35_sources: "/tmp/Python-{{ py35_version }}"
-py35_install: "{{ base_install_folder }}/python{{ py35_version }}"
-py35_symlink_target: "{{ py35_install }}"
-py35_bin: "{{ py35_install }}/bin/python3.5"
+py36_version: "3.6.5"
+py36_major_version: "{{ py36_version|truncate(3, killwords=true, end='') }}"
+py36_url: "https://www.python.org/ftp/python/{{ py36_version }}/Python-{{ py36_version }}.tar.xz"
+py36_md5: "9f49654a4d6f733ff3284ab9d227e9fd"
+py36_tar_file: "/tmp/py{{ py36_version }}.tar.xz"
+py36_sources: "/tmp/Python-{{ py36_version }}"
+py36_install: "{{ base_install_folder }}/python{{ py36_version }}"
+py36_symlink_target: "{{ py36_install }}"
+py36_bin: "{{ py36_install }}/bin/python3.6"
 
-venv24_url: "http://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.7.2.tar.gz"
+venv24_version: "1.7.2"
+venv24_url: "https://files.pythonhosted.org/packages/16/86/7b88d35d0a353ec70e42aa37fd8b0bd1c643419c80f022ffaafa4d6449f0/virtualenv-1.7.2.tar.gz"
 venv24_md5: "b5d63b05373a4344ae099a68875aae78"
-venv24_tar_file: "/tmp/virtualenv-1.7.2.tar.gz"
-venv24_sources: "/tmp/virtualenv-1.7.2"
+venv24_tar_file: "/tmp/virtualenv-{{ venv26_version }}.tar.gz"
+venv24_sources: "/tmp/virtualenv-{{ venv26_version }}"
 
-venv26_url: "https://pypi.python.org/packages/d5/5b/f425e456e017af4801bb08920e30c149a44ac0c194f2225bdb712e77701c/virtualenv-1.10.tar.gz"
+venv26_version: "1.10"
+venv26_url: "https://files.pythonhosted.org/packages/d5/5b/f425e456e017af4801bb08920e30c149a44ac0c194f2225bdb712e77701c/virtualenv-1.10.tar.gz"
 venv26_md5: "9745c28256c70c76d36adb3767a00212"
-venv26_tar_file: "/tmp/virtualenv-1.10.tar.gz"
-venv26_sources: "/tmp/virtualenv-1.10"
+venv26_tar_file: "/tmp/virtualenv-{{ venv26_version }}.tar.gz"
+venv26_sources: "/tmp/virtualenv-{{ venv26_version }}"
 
-venv27_url: "https://pypi.python.org/packages/5c/79/5dae7494b9f5ed061cff9a8ab8d6e1f02db352f3facf907d9eb614fb80e9/virtualenv-15.0.2.tar.gz"
-venv27_md5: "0ed59863994daf1292827ffdbba80a63"
-venv27_tar_file: "/tmp/virtualenv-15.0.2.tar.gz"
-venv27_sources: "/tmp/virtualenv-15.0.2"
+venv27_version: "16.0.0"
+venv27_url: "https://files.pythonhosted.org/packages/33/bc/fa0b5347139cd9564f0d44ebd2b147ac97c36b2403943dbee8a25fd74012/virtualenv-16.0.0.tar.gz"
+venv27_md5: "4feb74ee26255dd7e62e36ce96bcc4c6"
+venv27_tar_file: "/tmp/virtualenv-{{ venv27_version }}.tar.gz"
+venv27_sources: "/tmp/virtualenv-{{ venv27_version }}"
