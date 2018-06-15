@@ -15,7 +15,7 @@ On those occasions rather than replacing the version provided by your distributi
 Installs all necessary tools to build and install Python and then installs
 any given version of Python.
 
-So far Python 2.4, 2.6, 2.7 and 3.5 are supported,
+So far Python 2.4, 2.6, 2.7 and 3.6 are supported,
 plus installing system dependencies to install (not done in this role):
 
 - pillow
@@ -25,7 +25,7 @@ Adding support for other version should be trivial,
 pull requests welcome.
 
 For ease of usage an easy to remember symlink is provided for each python version,
-i.e. ``/srv/python27``, ``/srv/python35`` and so on.
+i.e. ``/srv/python27``, ``/srv/python36`` and so on.
 
 Requirements
 ============
@@ -36,7 +36,7 @@ Role Variables
 * python_24: ``true/false`` (defaults to **false**)
 * python_26: ``true/false`` (defaults to **false**)
 * python_27: ``true/false`` (defaults to **true**)
-* python_35: ``true/false`` (defaults to **true**)
+* python_36: ``true/false`` (defaults to **true**)
 * pillow: ``true/false`` (defaults to **false**)
 * lxml: ``true/false`` (defaults to **false**)
 
@@ -59,7 +59,7 @@ Example Playbook
       vars:
         - python_26: true
         - python_27: true
-        - python_35: true
+        - python_36: true
 
 There is an example ``Vagrantfile`` to test it locally.
 

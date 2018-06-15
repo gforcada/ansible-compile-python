@@ -37,14 +37,14 @@
     - tk-dev
     - zlib1g-dev
 
-- name: Python 3.5 deps | Install compile time dependencies
+- name: Python 3.6 deps | Install compile time dependencies
   become: true
   apt:
     name={{ item }}
     state=latest
   with_items:
     - liblzma-dev
-  when: python_35
+  when: python_36
 
 ##
 # Pillow
