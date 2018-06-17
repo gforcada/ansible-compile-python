@@ -15,6 +15,7 @@ lxml: false
 
 versions:
   py24: "2.4.6"
+  py26: "2.6.9"
 
 ##
 # fine grained settings
@@ -31,14 +32,15 @@ py24:
   install: "{{ base_install_folder }}/python{{ versions.py24 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py24 }}/bin/python2.4"
 
-py26_version: "2.6.9"
-py26_major_version: "2.6"
-py26_url: "https://www.python.org/ftp/python/{{ py26_version }}/Python-{{ py26_version }}.tar.xz"
-py26_md5: "933a811f11e3db3d73ae492f6c3a7a76"
-py26_tar_file: "/tmp/py{{ py26_version }}.tar.xz"
-py26_sources: "/tmp/Python-{{ py26_version }}"
-py26_install: "{{ base_install_folder }}/python{{ py26_version }}"
-py26_bin: "{{ py26_install }}/bin/python2.6"
+py26:
+  version: "{{ versions.py26 }}"
+  major_version: "2.6"
+  url: "https://www.python.org/ftp/python/{{ versions.py26 }}/Python-{{ versions.py26 }}.tar.xz"
+  md5: "933a811f11e3db3d73ae492f6c3a7a76"
+  tar_file: "/tmp/py{{ versions.py26 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py26 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py26 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py26 }}/bin/python2.6"
 
 py27_version: "2.7.15"
 py27_major_version: "2.7"
