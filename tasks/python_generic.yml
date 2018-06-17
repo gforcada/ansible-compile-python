@@ -1,0 +1,41 @@
+---
+
+- name: "{{ py_data.version }} | Check that {{ py_data.version}} is still not installed"
+  become: true
+  stat: path="{{ py_data.bin }}"
+  register: already_installed
+  ignore_errors: True
+
+- name: "{{ py_data.version }} | Download"
+  get_url:
+    url="{{ py_data.url }}"
+    dest="{{ py_data.tar_file }}"
+    checksum="md5:{{ py_data.md5 }}"
+  when: should_install and already_installed.stat.exists == false
+
+- name: "{{ py_data.version }} | Uncompress"
+  unarchive:
+    src={{ py_data.tar_file }}
+    dest=/tmp
+    copy=no
+    creates="{{ py_data.sources }}"
+  when: should_install and already_installed.stat.exists == false
+
+- name: "{{ py_data.version }} | Compile and install"
+  become: true
+  command: "{{ item }}"
+  args:
+    chdir: "{{ py_data.sources }}"
+  with_items:
+    - "./configure --enable-optimizations --prefix {{ py_data.install }}"
+    - make
+    - make install
+  when: should_install and already_installed.stat.exists == false
+
+- name: "{{ py_data.version }} | Create python_major_version symlink"
+  become: true
+  file:
+    src={{ py_data.install }}
+    dest='{{ base_install_folder }}/python{{ py_data.major_version }}'
+    state=link
+  when: should_install and already_installed.stat.exists == false
