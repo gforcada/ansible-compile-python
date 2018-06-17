@@ -1,3 +1,4 @@
+---
 
 - name: py26 | Check that py26 is still not installed
   become: true

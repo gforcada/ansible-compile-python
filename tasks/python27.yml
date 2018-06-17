@@ -1,14 +1,9 @@
+---
 
 - name: py27 | Check that py27 is still not installed
   become: true
   stat: path="{{ py27_bin }}"
   register: py27_already_installed
-  ignore_errors: True
-
-- name: py36 | Check that py36 is still not installed
-  become: true
-  stat: path="{{ py36_bin }}"
-  register: py36_already_installed
   ignore_errors: True
 
 - name: py27 | Download
