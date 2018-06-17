@@ -53,7 +53,7 @@ py35_md5: "f3763edf9824d5d3a15f5f646083b6e0"
 py35_tar_file: "/tmp/py{{ py35_version }}.tar.xz"
 py35_sources: "/tmp/Python-{{ py35_version }}"
 py35_install: "{{ base_install_folder }}/python{{ py35_version }}"
-py35_bin: "{{ py35_install }}/bin/python3.6"
+py35_bin: "{{ py35_install }}/bin/python3.5"
 
 py36_version: "3.6.5"
 py36_major_version: "3.6"
