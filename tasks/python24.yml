@@ -1,0 +1,56 @@
+---
+
+- name: py24 | Check that py24 is still not installed
+  become: true
+  stat: path="{{ py24_bin }}"
+  register: py24_already_installed
+  ignore_errors: True
+
+- name: py24 | Download
+  get_url:
+    url="{{ py24_url }}"
+    dest="{{ py24_tar_file }}"
+    checksum="md5:{{ py24_md5 }}"
+  when: python_24 and py24_already_installed.stat.exists == false
+
+- name: py24 | Uncompress
+  unarchive:
+    src={{ py24_tar_file }}
+    dest=/tmp
+    copy=no
+    creates="{{ py24_sources }}"
+  when: python_24 and py24_already_installed.stat.exists == false
+
+- name: py24 | Configure sources
+  become: true
+  command: "./configure --prefix {{ py24_install }}"
+  args:
+    chdir: "{{ py24_sources }}"
+  when: python_24 and py24_already_installed.stat.exists == false
+
+- name: py24 | Tweak sources
+  become: true
+  lineinfile:
+    dest="{{ py24_sources }}/Modules/Setup"
+    regexp=^#zlib(.*)
+    line=zlib\1
+    backrefs=yes
+  when: python_24 and py24_already_installed.stat.exists == false
+
+- name: py24 | Compile and install
+  become: true
+  command: "{{ item }}"
+  args:
+    chdir: "{{ py24_sources }}"
+  with_items:
+    - make
+    - make install
+  when: python_24 and py24_already_installed.stat.exists == false
+
+- name: p24 | Create python_major_version symlink
+  become: true
+  file:
+    src={{ py24_install }}
+    dest='{{ base_install_folder }}/python{{ py24_major_version }}'
+    state=link
+  when: python_24 and py24_already_installed.stat.exists == false

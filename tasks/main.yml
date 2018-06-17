@@ -1,6 +1,9 @@
 ---
 
 - include: deps.yml
-- include: python.yml
+- include: python24.yml
+- include: python26.yml
+- include: python27.yml
+- include: python36.yml
 - include: venv.yml
 
