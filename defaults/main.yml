@@ -7,6 +7,7 @@
 python_24: false
 python_26: false
 python_27: true
+python_35: false
 python_36: true
 
 pillow: false
@@ -47,6 +48,16 @@ py27_sources: "/tmp/Python-{{ py27_version }}"
 py27_install: "{{ base_install_folder }}/python{{ py27_version }}"
 py27_symlink_target: "{{ py27_install }}"
 py27_bin: "{{ py27_install }}/bin/python2.7"
+
+py35_version: "3.5.5"
+py35_major_version: "3.5"
+py35_url: "https://www.python.org/ftp/python/{{ py35_version }}/Python-{{ py35_version }}.tar.xz"
+py35_md5: "f3763edf9824d5d3a15f5f646083b6e0"
+py35_tar_file: "/tmp/py{{ py35_version }}.tar.xz"
+py35_sources: "/tmp/Python-{{ py35_version }}"
+py35_install: "{{ base_install_folder }}/python{{ py35_version }}"
+py35_symlink_target: "{{ py35_install }}"
+py35_bin: "{{ py35_install }}/bin/python3.6"
 
 py36_version: "3.6.5"
 py36_major_version: "3.6"
