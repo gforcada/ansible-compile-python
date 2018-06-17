@@ -20,6 +20,11 @@ versions:
   py35: "3.5.5"
   py36: "3.6.5"
 
+venv_versions:
+  py24: "1.7.2"
+  py26: "1.10"
+  py27: "16.0.0"
+
 ##
 # fine grained settings
 ##
@@ -75,20 +80,23 @@ py36:
   install: "{{ base_install_folder }}/python{{ versions.py36 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py36 }}/bin/python3.6"
 
-venv24_version: "1.7.2"
-venv24_url: "https://files.pythonhosted.org/packages/16/86/7b88d35d0a353ec70e42aa37fd8b0bd1c643419c80f022ffaafa4d6449f0/virtualenv-1.7.2.tar.gz"
-venv24_md5: "b5d63b05373a4344ae099a68875aae78"
-venv24_tar_file: "/tmp/virtualenv-{{ venv26_version }}.tar.gz"
-venv24_sources: "/tmp/virtualenv-{{ venv26_version }}"
+venv24:
+  version: "{{ venv_versions.py24 }}"
+  url: "https://files.pythonhosted.org/packages/16/86/7b88d35d0a353ec70e42aa37fd8b0bd1c643419c80f022ffaafa4d6449f0/virtualenv-1.7.2.tar.gz"
+  md5: "b5d63b05373a4344ae099a68875aae78"
+  tar_file: "/tmp/virtualenv-{{ {{ venv_versions.py24 }} }}.tar.gz"
+  sources: "/tmp/virtualenv-{{ {{ venv_versions.py24 }} }}"
 
-venv26_version: "1.10"
-venv26_url: "https://files.pythonhosted.org/packages/d5/5b/f425e456e017af4801bb08920e30c149a44ac0c194f2225bdb712e77701c/virtualenv-1.10.tar.gz"
-venv26_md5: "9745c28256c70c76d36adb3767a00212"
-venv26_tar_file: "/tmp/virtualenv-{{ venv26_version }}.tar.gz"
-venv26_sources: "/tmp/virtualenv-{{ venv26_version }}"
+venv26:
+  version: "{{ venv_versions.py26 }}"
+  url: "https://files.pythonhosted.org/packages/d5/5b/f425e456e017af4801bb08920e30c149a44ac0c194f2225bdb712e77701c/virtualenv-1.10.tar.gz"
+  md5: "9745c28256c70c76d36adb3767a00212"
+  tar_file: "/tmp/virtualenv-{{ venv_versions.py26 }}.tar.gz"
+  sources: "/tmp/virtualenv-{{ venv_versions.py26 }}"
 
-venv27_version: "16.0.0"
-venv27_url: "https://files.pythonhosted.org/packages/33/bc/fa0b5347139cd9564f0d44ebd2b147ac97c36b2403943dbee8a25fd74012/virtualenv-16.0.0.tar.gz"
-venv27_md5: "4feb74ee26255dd7e62e36ce96bcc4c6"
-venv27_tar_file: "/tmp/virtualenv-{{ venv27_version }}.tar.gz"
-venv27_sources: "/tmp/virtualenv-{{ venv27_version }}"
+venv27:
+  version: "{{ venv_versions.py27 }}"
+  url: "https://files.pythonhosted.org/packages/33/bc/fa0b5347139cd9564f0d44ebd2b147ac97c36b2403943dbee8a25fd74012/virtualenv-16.0.0.tar.gz"
+  md5: "4feb74ee26255dd7e62e36ce96bcc4c6"
+  tar_file: "/tmp/virtualenv-{{ venv_versions.py27 }}.tar.gz"
+  sources: "/tmp/virtualenv-{{ venv_versions.py27 }}"
