@@ -6,6 +6,7 @@
 - include: python_generic.yml  py_data={{ py27 }}  should_install={{ python_27 }}
 - include: python_generic.yml  py_data={{ py35 }}  should_install={{ python_35 }}
 - include: python_generic.yml  py_data={{ py36 }}  should_install={{ python_36 }}
+- include: python_generic.yml  py_data={{ py37 }}  should_install={{ python_37 }}
 - include: venv.yml  py_data={{ py24 }}  venv_data={{ venv24 }}  should_install={{ python_24 }}
 - include: venv.yml  py_data={{ py26 }}  venv_data={{ venv26 }}  should_install={{ python_26 }}
 - include: venv.yml  py_data={{ py27 }}  venv_data={{ venv27 }}  should_install={{ python_27 }}
