@@ -1,0 +1,9 @@
+---
+
+- name: "Create a symlink to easily create python 2.7 virtualenvs"
+  become: true
+  file:
+    src: "/srv/python2.7/bin/virtualenv"
+    dest: "/usr/local/bin/virtualenv"
+    state: link
+  when: {{ python_27 }}
