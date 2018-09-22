@@ -7,6 +7,10 @@
 python_24: false
 python_26: false
 python_27: true
+python_31: false
+python_32: false
+python_33: false
+python_34: false
 python_35: false
 python_36: true
 python_37: false
@@ -18,6 +22,10 @@ versions:
   py24: "2.4.6"
   py26: "2.6.9"
   py27: "2.7.15"
+  py31: "3.1.5"
+  py32: "3.2.6"
+  py33: "3.3.7"
+  py34: "3.4.9"
   py35: "3.5.6"
   py36: "3.6.6"
   py37: "3.7.0"
@@ -61,6 +69,46 @@ py27:
   sources: "/tmp/Python-{{ versions.py27 }}"
   install: "{{ base_install_folder }}/python{{ versions.py27 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py27 }}/bin/python2.7"
+
+py31:
+  version: "{{ versions.py31 }}"
+  major_version: "3.1"
+  url: "https://www.python.org/ftp/python/{{ versions.py31 }}/Python-{{ versions.py31 }}.tar.xz"
+  md5: "20dd2b7f801dc97db948dd168df4dd52"
+  tar_file: "/tmp/py{{ versions.py31 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py31 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py31 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py31 }}/bin/python3.1"
+
+py32:
+  version: "{{ versions.py32 }}"
+  major_version: "3.2"
+  url: "https://www.python.org/ftp/python/{{ versions.py32 }}/Python-{{ versions.py32 }}.tar.xz"
+  md5: "e0ba4360dfcb4aec735e666cc0ae7b0e"
+  tar_file: "/tmp/py{{ versions.py32 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py32 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py32 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py32 }}/bin/python3.4"
+
+py33:
+  version: "{{ versions.py33 }}"
+  major_version: "3.3"
+  url: "https://www.python.org/ftp/python/{{ versions.py33 }}/Python-{{ versions.py33 }}.tar.xz"
+  md5: "84e2f12f044ca53b577f6224c53f82ac"
+  tar_file: "/tmp/py{{ versions.py33 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py33 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py33 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py33 }}/bin/python3.3"
+
+py34:
+  version: "{{ versions.py34 }}"
+  major_version: "3.4"
+  url: "https://www.python.org/ftp/python/{{ versions.py34 }}/Python-{{ versions.py34 }}.tar.xz"
+  md5: "4ce46f8196bf629a889e68173234d955"
+  tar_file: "/tmp/py{{ versions.py34 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py34 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py34 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py34 }}/bin/python3.4"
 
 py35:
   version: "{{ versions.py35 }}"
