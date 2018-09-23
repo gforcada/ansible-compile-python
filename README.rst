@@ -15,16 +15,16 @@ On those occasions rather than replacing the version provided by your distributi
 Installs all necessary tools to build and install Python and then installs
 any given version of Python.
 
-So far Python 2.4, 2.6, 2.7, 3.5 and 3.6 are supported,
+So far Python 2.4, 2.6, 2.7, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6 and 3.7 are supported,
 plus installing system dependencies to install (not done in this role):
 
 - pillow
 - lxml
 
-Adding support for other version should be trivial,
+If other versions are wanted,
 pull requests welcome.
 
-For ease of usage an easy to remember symlink is provided for each python version,
+For ease of usage an easy to remember symlinks are provided for each python version,
 i.e. ``/srv/python27``, ``/srv/python36`` and so on.
 
 Requirements
@@ -36,8 +36,13 @@ Role Variables
 * python_24: ``true/false`` (defaults to **false**)
 * python_26: ``true/false`` (defaults to **false**)
 * python_27: ``true/false`` (defaults to **true**)
+* python_31: ``true/false`` (defaults to **false**)
+* python_32: ``true/false`` (defaults to **false**)
+* python_33: ``true/false`` (defaults to **false**)
+* python_34: ``true/false`` (defaults to **false**)
 * python_35: ``true/false`` (defaults to **false**)
 * python_36: ``true/false`` (defaults to **true**)
+* python_37: ``true/false`` (defaults to **false**)
 * pillow: ``true/false`` (defaults to **false**)
 * lxml: ``true/false`` (defaults to **false**)
 
@@ -45,6 +50,7 @@ Dependencies
 ============
 Ubuntu 14.04 (trusty)
 Ubuntu 16.04 (xenial)
+Ubuntu 18.04 (bionic)
 
 .. note::
    to run the role on *xenial* one first needs to ssh into the virtual machine and install python, i.e.:
