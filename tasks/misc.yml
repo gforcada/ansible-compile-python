@@ -6,4 +6,4 @@
     src: "/srv/python2.7/bin/virtualenv"
     dest: "/usr/local/bin/virtualenv"
     state: link
-  when: {{ python_27 }}
+  when: python_27
