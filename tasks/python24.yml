@@ -11,7 +11,7 @@
     url="{{ py24.url }}"
     dest="{{ py24.tar_file }}"
     checksum="md5:{{ py24.md5 }}"
-  when: python_24 and py24_already_installed.stat.exists == false
+  when: python_24 and not py24_already_installed.stat.exists
 
 - name: py24 | Uncompress
   unarchive:
@@ -19,14 +19,14 @@
     dest=/tmp
     copy=no
     creates="{{ py24.sources }}"
-  when: python_24 and py24_already_installed.stat.exists == false
+  when: python_24 and not py24_already_installed.stat.exists
 
 - name: py24 | Configure sources
   become: true
   command: "./configure --prefix {{ py24.install }}"
   args:
     chdir: "{{ py24.sources }}"
-  when: python_24 and py24_already_installed.stat.exists == false
+  when: python_24 and not py24_already_installed.stat.exists
 
 - name: py24 | Tweak sources
   become: true
@@ -35,7 +35,7 @@
     regexp=^#zlib(.*)
     line=zlib\1
     backrefs=yes
-  when: python_24 and py24_already_installed.stat.exists == false
+  when: python_24 and not py24_already_installed.stat.exists
 
 - name: py24 | Compile and install
   become: true
@@ -45,7 +45,7 @@
   with_items:
     - make
     - make install
-  when: python_24 and py24_already_installed.stat.exists == false
+  when: python_24 and not py24_already_installed.stat.exists
 
 - name: p24 | Create python_major_version symlink
   become: true
@@ -53,4 +53,4 @@
     src={{ py24.install }}
     dest='{{ base_install_folder }}/python{{ py24.major_version }}'
     state=link
-  when: python_24 and py24_already_installed.stat.exists == false
+  when: python_24 and not py24_already_installed.stat.exists

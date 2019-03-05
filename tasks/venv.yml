@@ -12,14 +12,14 @@
     url="{{ venv_data.url }}"
     dest="{{ venv_data.tar_file }}"
     checksum="md5:{{ venv_data.md5 }}"
-  when: should_install and already_installed.stat.exists == false
+  when: should_install and not already_installed.stat.exists
 
 - name: "virtualenv for {{ py_data.version }} | Uncompress"
   unarchive:
     src="{{ venv_data.tar_file }}"
     dest=/tmp
     copy=no
-  when: should_install and already_installed.stat.exists == false
+  when: should_install and not already_installed.stat.exists
 
 - name: " {{ py_data.version }} | Install virtualenv"
   become: true
@@ -29,4 +29,4 @@
     creates: "{{ py_data.install }}/bin/virtualenv"
   with_items:
     - "{{ py_data.bin }} setup.py install"
-  when: should_install and already_installed.stat.exists == false
+  when: should_install and not already_installed.stat.exists

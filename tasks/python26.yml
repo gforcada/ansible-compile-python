@@ -11,7 +11,7 @@
     url="{{ py26.url }}"
     dest="{{ py26.tar_file }}"
     checksum="md5:{{ py26.md5 }}"
-  when: python_26 and py26_already_installed.stat.exists == false
+  when: python_26 and not py26_already_installed.stat.exists
 
 - name: py26 | Uncompress
   unarchive:
@@ -19,14 +19,14 @@
     dest=/tmp
     copy=no
     creates="{{ py26.sources }}"
-  when: python_26 and py26_already_installed.stat.exists == false
+  when: python_26 and not py26_already_installed.stat.exists
 
 - name: py26 | Configure sources
   become: true
   command: "./configure --prefix {{ py26.install }}"
   args:
     chdir: "{{ py26.sources }}"
-  when: python_26 and py26_already_installed.stat.exists == false
+  when: python_26 and not py26_already_installed.stat.exists
 
 - name: py26 | Tweak sources
   become: true
@@ -35,7 +35,7 @@
     regexp=^#zlib(.*)
     line=zlib\1
     backrefs=yes
-  when: python_26 and py26_already_installed.stat.exists == false
+  when: python_26 and not py26_already_installed.stat.exists
 
 - name: py26 | Tweak sources
   become: true
@@ -44,7 +44,7 @@
     regexp=^#_sha256(.*)
     line=_sha256\1
     backrefs=yes
-  when: python_26 and py26_already_installed.stat.exists == false
+  when: python_26 and not py26_already_installed.stat.exists
 
 - name: py26 | Tweak sources
   become: true
@@ -53,7 +53,7 @@
     regexp=^#_sha512(.*)
     line=_sha512\1
     backrefs=yes
-  when: python_26 and py26_already_installed.stat.exists == false
+  when: python_26 and not py26_already_installed.stat.exists
 
 - name: py26 | Compile and install
   become: true
@@ -63,7 +63,7 @@
   with_items:
     - make
     - make install
-  when: python_26 and py26_already_installed.stat.exists == false
+  when: python_26 and not py26_already_installed.stat.exists
 
 - name: py26 | Create python_major_version symlink
   become: true
@@ -71,4 +71,4 @@
     src={{ py26.install }}
     dest='{{ base_install_folder }}/python{{ py26.major_version }}'
     state=link
-  when: python_26 and py26_already_installed.stat.exists == false
+  when: python_26 and not py26_already_installed.stat.exists
