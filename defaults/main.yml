@@ -21,7 +21,7 @@ lxml: false
 versions:
   py24: "2.4.6"
   py26: "2.6.9"
-  py27: "2.7.15"
+  py27: "2.7.16"
   py31: "3.1.5"
   py32: "3.2.6"
   py33: "3.3.7"
@@ -64,7 +64,7 @@ py27:
   version: "{{ versions.py27 }}"
   major_version: "2.7"
   url: "https://www.python.org/ftp/python/{{ versions.py27 }}/Python-{{ versions.py27 }}.tar.xz"
-  md5: "a80ae3cc478460b922242f43a1b4094d"
+  md5: "30157d85a2c0479c09ea2cbe61f2aaf5"
   tar_file: "/tmp/py{{ versions.py27 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py27 }}"
   install: "{{ base_install_folder }}/python{{ versions.py27 }}"
