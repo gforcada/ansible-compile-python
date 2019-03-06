@@ -8,7 +8,7 @@
 - name: Python deps | Install compile time depdendencies
   become: true
   apt:
-    state: latest
+    state: present
     name:
       - autotools-dev
       - blt-dev
@@ -39,7 +39,7 @@
 - name: Python 3.6 deps | Install compile time dependencies
   become: true
   apt:
-    state: latest
+    state: present
     name:
       - liblzma-dev
   when: python_36
@@ -51,7 +51,7 @@
 - name: Pillow deps | Install compile time depdendencies
   become: true
   apt:
-    state: latest
+    state: present
     name:
       - cmake
       - libfreetype6-dev
@@ -70,7 +70,7 @@
 - name: lxml deps | Install compile time dependencies
   become: true
   apt:
-    state: latest
+    state: present
     name:
       - libxml2
       - libxml2-dev
