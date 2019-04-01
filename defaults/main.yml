@@ -28,7 +28,7 @@ versions:
   py34: "3.4.10"
   py35: "3.5.7"
   py36: "3.6.8"
-  py37: "3.7.2"
+  py37: "3.7.3"
 
 venv_versions:
   py24: "1.7.2"
@@ -134,7 +134,7 @@ py37:
   version: "{{  versions.py37 }}"
   major_version: "3.7"
   url: "https://www.python.org/ftp/python/{{ versions.py37 }}/Python-{{ versions.py37 }}.tar.xz"
-  md5: "df6ec36011808205beda239c72f947cb"
+  md5: "93df27aec0cd18d6d42173e601ffbbfd"
   tar_file: "/tmp/py{{ versions.py37 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py37 }}"
   install: "{{ base_install_folder }}/python{{ versions.py37 }}"
