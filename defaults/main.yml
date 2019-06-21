@@ -35,7 +35,7 @@ versions:
 venv_versions:
   py24: "1.7.2"
   py26: "1.10"
-  py27: "16.0.0"
+  py27: "16.6.1"
 
 ##
 # fine grained settings
@@ -168,7 +168,7 @@ venv26:
 
 venv27:
   version: "{{ venv_versions.py27 }}"
-  url: "https://files.pythonhosted.org/packages/33/bc/fa0b5347139cd9564f0d44ebd2b147ac97c36b2403943dbee8a25fd74012/virtualenv-16.0.0.tar.gz"
-  md5: "4feb74ee26255dd7e62e36ce96bcc4c6"
+  url: "https://files.pythonhosted.org/packages/37/27/706af3ee62032933a3217454609c50a5325a6bd9c2c2f495b58c456ba286/virtualenv-16.6.1.tar.gz"
+  md5: "b05b03dc6ecb3caaa3d58bfcccf4e786"
   tar_file: "/tmp/virtualenv-{{ venv_versions.py27 }}.tar.gz"
   sources: "/tmp/virtualenv-{{ venv_versions.py27 }}"
