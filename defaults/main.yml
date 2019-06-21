@@ -14,6 +14,7 @@ python_34: false
 python_35: false
 python_36: true
 python_37: false
+python_38: false
 
 pillow: false
 lxml: false
@@ -29,6 +30,7 @@ versions:
   py35: "3.5.7"
   py36: "3.6.8"
   py37: "3.7.3"
+  py38: "3.8.0b1"
 
 venv_versions:
   py24: "1.7.2"
@@ -139,6 +141,16 @@ py37:
   sources: "/tmp/Python-{{ versions.py37 }}"
   install: "{{ base_install_folder }}/python{{ versions.py37 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py37 }}/bin/python3.7"
+
+py38:
+  version: "{{  versions.py38 }}"
+  major_version: "3.8"
+  url: "https://www.python.org/ftp/python/{{ versions.py38 }}/Python-{{ versions.py38 }}.tar.xz"
+  md5: "0540e00104a96e0e2f8cbcc8488e9895"
+  tar_file: "/tmp/py{{ versions.py38 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py38 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py38 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py38 }}/bin/python3.8"
 
 venv24:
   version: "{{ venv_versions.py24 }}"
