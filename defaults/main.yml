@@ -145,7 +145,7 @@ py37:
 py38:
   version: "{{  versions.py38 }}"
   major_version: "3.8"
-  url: "https://www.python.org/ftp/python/{{ versions.py38 }}/Python-{{ versions.py38 }}.tar.xz"
+  url: "https://www.python.org/ftp/python/3.8.0/Python-{{ versions.py38 }}.tar.xz"
   md5: "0540e00104a96e0e2f8cbcc8488e9895"
   tar_file: "/tmp/py{{ versions.py38 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py38 }}"
