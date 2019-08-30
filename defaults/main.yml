@@ -30,7 +30,7 @@ versions:
   py35: "3.5.7"
   py36: "3.6.9"
   py37: "3.7.4"
-  py38: "3.8.0b2"
+  py38: "3.8.0b4"
 
 venv_versions:
   py24: "1.7.2"
@@ -146,7 +146,7 @@ py38:
   version: "{{  versions.py38 }}"
   major_version: "3.8"
   url: "https://www.python.org/ftp/python/3.8.0/Python-{{ versions.py38 }}.tar.xz"
-  md5: "45f82dd4e05b4cb40406123dc7bf5f14"
+  md5: "096e2d9ae106a6f166c59e6068cd4735"
   tar_file: "/tmp/py{{ versions.py38 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py38 }}"
   install: "{{ base_install_folder }}/python{{ versions.py38 }}"
