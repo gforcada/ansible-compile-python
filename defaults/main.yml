@@ -166,6 +166,7 @@ py38:
   tar_file: "/tmp/py{{ versions.py38 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py38 }}"
   install: "{{ base_install_folder }}/python{{ versions.py38 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py38 }}/bin/python3.8"
 
 py39:
   version: "{{  versions.py39 }}"
@@ -176,7 +177,6 @@ py39:
   sources: "/tmp/Python-{{ versions.py39 }}"
   install: "{{ base_install_folder }}/python{{ versions.py39 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py39 }}/bin/python3.9"
- bin: "{{ base_install_folder }}/python{{ versions.py39 }}/bin/python3.9"
 
 venv24:
   version: "{{ venv_versions.py24 }}"
