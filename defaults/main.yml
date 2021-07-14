@@ -29,10 +29,10 @@ versions:
   py33: "3.3.7"
   py34: "3.4.10"
   py35: "3.5.10"
-  py36: "3.6.12"
-  py37: "3.7.10"
-  py38: "3.8.10"
-  py39: "3.9.5"
+  py36: "3.6.14"
+  py37: "3.7.11"
+  py38: "3.8.11"
+  py39: "3.9.6"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -43,10 +43,10 @@ hashes:
   py33: "84e2f12f044ca53b577f6224c53f82ac"
   py34: "f88a98bce17a03c43a6a5f8a66ab2e62"
   py35: "75c9c268703654aa6f6f2ae67303dde4"
-  py36: "9ca8ca6f206e9ac0f0726ecb4ebb6e2c"
-  py37: "9e34914bc804ab2e7d955b49c5e1e391"
-  py38: "d9eee4b20155553830a2025e4dcaa7b3"
-  py39: "71f7ada6bec9cdbf4538adc326120cfd"
+  py36: "3224d64986a9f10b9a52f4fd6f0a0412"
+  py37: "b3671d35b61f5422605cedad32f3457a"
+  py38: "5840ba601128f48fee4e7c98fbdac65d"
+  py39: "ecc29a7688f86e550d29dba2ee66cf80"
 
 venv_versions:
   py24: "1.7.2"
