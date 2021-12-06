@@ -16,6 +16,7 @@ python_36: true
 python_37: false
 python_38: false
 python_39: false
+python_310: false
 
 pillow: false
 lxml: false
@@ -29,10 +30,11 @@ versions:
   py33: "3.3.7"
   py34: "3.4.10"
   py35: "3.5.10"
-  py36: "3.6.14"
-  py37: "3.7.11"
-  py38: "3.8.11"
-  py39: "3.9.6"
+  py36: "3.6.15"
+  py37: "3.7.12"
+  py38: "3.8.12"
+  py39: "3.9.9"
+  py310: "3.10.0"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -43,10 +45,11 @@ hashes:
   py33: "84e2f12f044ca53b577f6224c53f82ac"
   py34: "f88a98bce17a03c43a6a5f8a66ab2e62"
   py35: "75c9c268703654aa6f6f2ae67303dde4"
-  py36: "3224d64986a9f10b9a52f4fd6f0a0412"
-  py37: "b3671d35b61f5422605cedad32f3457a"
-  py38: "5840ba601128f48fee4e7c98fbdac65d"
-  py39: "ecc29a7688f86e550d29dba2ee66cf80"
+  py36: "bc04aa6c2a1a172a35012abd668538cd"
+  py37: "352ea082224121a8b7bc4d6d06e5de39"
+  py38: "9dd8f82e586b776383c82e27923f8795"
+  py39: "11d12076311563252a995201248d17e5"
+  py310: "3e7035d272680f80e3ce4e8eb492d580"
 
 venv_versions:
   py24: "1.7.2"
@@ -177,6 +180,16 @@ py39:
   sources: "/tmp/Python-{{ versions.py39 }}"
   install: "{{ base_install_folder }}/python{{ versions.py39 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py39 }}/bin/python3.9"
+
+py310:
+  version: "{{  versions.py310 }}"
+  major_version: "3.10"
+  url: "https://www.python.org/ftp/python/{{ versions.py310 }}/Python-{{ versions.py310 }}.tar.xz"
+  md5: "{{ hashes.py310 }}"
+  tar_file: "/tmp/py{{ versions.py310 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py310 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py310 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py310 }}/bin/python3.10"
 
 venv24:
   version: "{{ venv_versions.py24 }}"
