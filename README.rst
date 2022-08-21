@@ -15,7 +15,7 @@ On those occasions rather than replacing the version provided by your distributi
 Installs all necessary tools to build and install Python and then installs
 any given version of Python.
 
-So far Python 2.4, 2.6, 2.7, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9 and 3.10 are supported,
+So far Python 2.4, 2.6, 2.7 and  3.1 to 3.11 are supported,
 plus installing system dependencies to install (not done in this role):
 
 - pillow
