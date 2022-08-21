@@ -17,6 +17,7 @@ python_37: false
 python_38: false
 python_39: false
 python_310: false
+python_311: false
 
 pillow: false
 lxml: false
@@ -35,6 +36,7 @@ versions:
   py38: "3.8.13"
   py39: "3.9.13"
   py310: "3.10.6"
+  py311: "3.11.0rc1"  # note that the path to the xz file needs minor adapting once a file release is out
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -50,6 +52,7 @@ hashes:
   py38: "c4b7100dcaace9d33ab1fda9a3a038d6"
   py39: "5e2411217b0060828d5f923eb422a3b8"
   py310: "afc7e14f7118d10d1ba95ae8e2134bf0"
+  py311: "013eb698ab20c284e5b8373435add767"
 
 venv_versions:
   py24: "1.7.2"
@@ -190,6 +193,16 @@ py310:
   sources: "/tmp/Python-{{ versions.py310 }}"
   install: "{{ base_install_folder }}/python{{ versions.py310 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py310 }}/bin/python3.10"
+
+py311:
+  version: "{{  versions.py311 }}"
+  major_version: "3.11"
+  url: "https://www.python.org/ftp/python/3.11.0/Python-{{ versions.py311 }}.tar.xz"
+  md5: "{{ hashes.py311 }}"
+  tar_file: "/tmp/py{{ versions.py311 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py311 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py311 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py311 }}/bin/python3.11"
 
 venv24:
   version: "{{ venv_versions.py24 }}"
