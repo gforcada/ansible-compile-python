@@ -6,15 +6,15 @@
 
 python_24: false
 python_26: false
-python_27: true
+python_27: false
 python_31: false
 python_32: false
 python_33: false
 python_34: false
 python_35: false
-python_36: true
+python_36: false
 python_37: false
-python_38: false
+python_38: true
 python_39: false
 python_310: false
 python_311: false
