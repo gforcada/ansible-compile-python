@@ -32,10 +32,10 @@ versions:
   py34: "3.4.10"
   py35: "3.5.10"
   py36: "3.6.15"
-  py37: "3.7.13"
-  py38: "3.8.13"
-  py39: "3.9.13"
-  py310: "3.10.6"
+  py37: "3.7.14"
+  py38: "3.8.14"
+  py39: "3.9.14"
+  py310: "3.10.7"
   py311: "3.11.0rc1"  # note that the path to the xz file needs minor adapting once a file release is out
 
 hashes:
@@ -48,10 +48,10 @@ hashes:
   py34: "f88a98bce17a03c43a6a5f8a66ab2e62"
   py35: "75c9c268703654aa6f6f2ae67303dde4"
   py36: "bc04aa6c2a1a172a35012abd668538cd"
-  py37: "10822726f75fd7efe05a94fbd6ac2258"
-  py38: "c4b7100dcaace9d33ab1fda9a3a038d6"
-  py39: "5e2411217b0060828d5f923eb422a3b8"
-  py310: "afc7e14f7118d10d1ba95ae8e2134bf0"
+  py37: "0acdd6e1a95f49ee7f9b338fb6092b65"
+  py38: "78710eed185b71f4198d354502ff62c9"
+  py39: "81cbab3acbc7771f71491b52206d9b6a"
+  py310: "b8094f007b3a835ca3be6bdf8116cccc"
   py311: "013eb698ab20c284e5b8373435add767"
 
 venv_versions:
