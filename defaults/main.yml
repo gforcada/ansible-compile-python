@@ -32,11 +32,11 @@ versions:
   py34: "3.4.10"
   py35: "3.5.10"
   py36: "3.6.15"
-  py37: "3.7.14"
-  py38: "3.8.14"
-  py39: "3.9.14"
-  py310: "3.10.7"
-  py311: "3.11.0rc1"  # note that the path to the xz file needs minor adapting once a file release is out
+  py37: "3.7.15"
+  py38: "3.8.15"
+  py39: "3.9.15"
+  py310: "3.10.8"
+  py311: "3.11.0"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -48,11 +48,11 @@ hashes:
   py34: "f88a98bce17a03c43a6a5f8a66ab2e62"
   py35: "75c9c268703654aa6f6f2ae67303dde4"
   py36: "bc04aa6c2a1a172a35012abd668538cd"
-  py37: "0acdd6e1a95f49ee7f9b338fb6092b65"
-  py38: "78710eed185b71f4198d354502ff62c9"
-  py39: "81cbab3acbc7771f71491b52206d9b6a"
-  py310: "b8094f007b3a835ca3be6bdf8116cccc"
-  py311: "013eb698ab20c284e5b8373435add767"
+  py37: "d2ff16776b5d822efc2a7cbf42fc2915"
+  py38: "cca78a827d2327f5c3ff2dee9f526e7e"
+  py39: "8adc5662c9fd10a23ae8ae9f28b65b49"
+  py310: "e92356b012ed4d0e09675131d39b1bde"
+  py311: "fe92acfa0db9b9f5044958edb451d463"
 
 venv_versions:
   py24: "1.7.2"
@@ -197,7 +197,7 @@ py310:
 py311:
   version: "{{  versions.py311 }}"
   major_version: "3.11"
-  url: "https://www.python.org/ftp/python/3.11.0/Python-{{ versions.py311 }}.tar.xz"
+  url: "https://www.python.org/ftp/python/{{ versions.py311 }}/Python-{{ versions.py311 }}.tar.xz"
   md5: "{{ hashes.py311 }}"
   tar_file: "/tmp/py{{ versions.py311 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py311 }}"
