@@ -145,7 +145,7 @@ py35:
   bin: "{{ base_install_folder }}/python{{ versions.py35 }}/bin/python3.5"
 
 py36:
-  version: "{{  versions.py36 }}"
+  version: "{{ versions.py36 }}"
   major_version: "3.6"
   url: "https://www.python.org/ftp/python/{{ versions.py36 }}/Python-{{ versions.py36 }}.tar.xz"
   md5: "{{ hashes.py36 }}"
@@ -155,7 +155,7 @@ py36:
   bin: "{{ base_install_folder }}/python{{ versions.py36 }}/bin/python3.6"
 
 py37:
-  version: "{{  versions.py37 }}"
+  version: "{{ versions.py37 }}"
   major_version: "3.7"
   url: "https://www.python.org/ftp/python/{{ versions.py37 }}/Python-{{ versions.py37 }}.tar.xz"
   md5: "{{ hashes.py37 }}"
@@ -165,7 +165,7 @@ py37:
   bin: "{{ base_install_folder }}/python{{ versions.py37 }}/bin/python3.7"
 
 py38:
-  version: "{{  versions.py38 }}"
+  version: "{{ versions.py38 }}"
   major_version: "3.8"
   url: "https://www.python.org/ftp/python/{{ versions.py38 }}/Python-{{ versions.py38 }}.tar.xz"
   md5: "{{ hashes.py38 }}"
@@ -175,7 +175,7 @@ py38:
   bin: "{{ base_install_folder }}/python{{ versions.py38 }}/bin/python3.8"
 
 py39:
-  version: "{{  versions.py39 }}"
+  version: "{{ versions.py39 }}"
   major_version: "3.9"
   url: "https://www.python.org/ftp/python/{{ versions.py39 }}/Python-{{ versions.py39 }}.tar.xz"
   md5: "{{ hashes.py39 }}"
@@ -185,7 +185,7 @@ py39:
   bin: "{{ base_install_folder }}/python{{ versions.py39 }}/bin/python3.9"
 
 py310:
-  version: "{{  versions.py310 }}"
+  version: "{{ versions.py310 }}"
   major_version: "3.10"
   url: "https://www.python.org/ftp/python/{{ versions.py310 }}/Python-{{ versions.py310 }}.tar.xz"
   md5: "{{ hashes.py310 }}"
@@ -195,7 +195,7 @@ py310:
   bin: "{{ base_install_folder }}/python{{ versions.py310 }}/bin/python3.10"
 
 py311:
-  version: "{{  versions.py311 }}"
+  version: "{{ versions.py311 }}"
   major_version: "3.11"
   url: "https://www.python.org/ftp/python/{{ versions.py311 }}/Python-{{ versions.py311 }}.tar.xz"
   md5: "{{ hashes.py311 }}"
@@ -208,8 +208,8 @@ venv24:
   version: "{{ venv_versions.py24 }}"
   url: "https://files.pythonhosted.org/packages/16/86/7b88d35d0a353ec70e42aa37fd8b0bd1c643419c80f022ffaafa4d6449f0/virtualenv-1.7.2.tar.gz"
   md5: "b5d63b05373a4344ae099a68875aae78"
-  tar_file: "/tmp/virtualenv-{{ {{ venv_versions.py24 }} }}.tar.gz"
-  sources: "/tmp/virtualenv-{{ {{ venv_versions.py24 }} }}"
+  tar_file: "/tmp/virtualenv-{{ venv_versions.py24 }}.tar.gz"
+  sources: "/tmp/virtualenv-{{ venv_versions.py24 }}"
 
 venv26:
   version: "{{ venv_versions.py26 }}"
