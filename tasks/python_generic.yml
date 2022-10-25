@@ -4,7 +4,7 @@
   become: true
   stat: path="{{ py_data.bin }}"
   register: already_installed
-  ignore_errors: True
+  ignore_errors: true
 
 - name: "{{ py_data.version }} | Download"
   get_url:

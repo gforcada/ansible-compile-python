@@ -4,7 +4,7 @@
   become: true
   stat: path="{{ py_data.install }}/bin/virtualenv"
   register: already_installed
-  ignore_errors: True
+  ignore_errors: true
   when: should_install
 
 - name: "virtualenv for {{ py_data.version }} | Download"

@@ -4,7 +4,7 @@
   become: true
   stat: path="{{ py24.bin }}"
   register: py24_already_installed
-  ignore_errors: True
+  ignore_errors: true
 
 - name: py24 | Download
   get_url:

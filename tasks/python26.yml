@@ -4,7 +4,7 @@
   become: true
   stat: path="{{ py26.bin }}"
   register: py26_already_installed
-  ignore_errors: True
+  ignore_errors: true
 
 - name: py26 | Download
   get_url:
