@@ -32,11 +32,11 @@ versions:
   py34: "3.4.10"
   py35: "3.5.10"
   py36: "3.6.15"
-  py37: "3.7.15"
-  py38: "3.8.15"
-  py39: "3.9.15"
-  py310: "3.10.8"
-  py311: "3.11.0"
+  py37: "3.7.16"
+  py38: "3.8.16"
+  py39: "3.9.16"
+  py310: "3.10.9"
+  py311: "3.11.1"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -48,11 +48,11 @@ hashes:
   py34: "f88a98bce17a03c43a6a5f8a66ab2e62"
   py35: "75c9c268703654aa6f6f2ae67303dde4"
   py36: "bc04aa6c2a1a172a35012abd668538cd"
-  py37: "d2ff16776b5d822efc2a7cbf42fc2915"
-  py38: "cca78a827d2327f5c3ff2dee9f526e7e"
-  py39: "8adc5662c9fd10a23ae8ae9f28b65b49"
-  py310: "e92356b012ed4d0e09675131d39b1bde"
-  py311: "fe92acfa0db9b9f5044958edb451d463"
+  py37: "df3b8ad6e2ab8f198d65ecf68816bf42"
+  py38: "621ac153586a3152e2ab7d3a8614df9a"
+  py39: "5738c204eecc375e29751cb2176fc9cc"
+  py310: "dc8c0f274b28ee9e95923d20cfc364c9"
+  py311: "4efe92adf28875c77d3b9b2e8d3bc44a"
 
 venv_versions:
   py24: "1.7.2"
