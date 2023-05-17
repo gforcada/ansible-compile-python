@@ -21,7 +21,6 @@
       - libexpat1-dev
       - libffi-dev
       - libffi8
-      - libffi8-dbg
       - libgdbm-dev
       - libgpm2
       - libncursesw5-dev
