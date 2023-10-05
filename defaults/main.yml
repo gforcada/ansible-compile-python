@@ -37,6 +37,7 @@ versions:
   py39: "3.9.17"
   py310: "3.10.12"
   py311: "3.11.4"
+  py312: "3.12.0"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -53,6 +54,7 @@ hashes:
   py39: "601fc470594f378b4339b454901f8e41"
   py310: "49b0342476b984e106d308c25d657f12"
   py311: "fb7f7eae520285788449d569e45b6718"
+  py312: "f6f4616584b23254d165f4db90c247d6"
 
 venv_versions:
   py24: "1.7.2"
@@ -203,6 +205,16 @@ py311:
   sources: "/tmp/Python-{{ versions.py311 }}"
   install: "{{ base_install_folder }}/python{{ versions.py311 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py311 }}/bin/python3.11"
+
+py312:
+  version: "{{ versions.py312 }}"
+  major_version: "3.12"
+  url: "https://www.python.org/ftp/python/{{ versions.py312 }}/Python-{{ versions.py312 }}.tar.xz"
+  md5: "{{ hashes.py312 }}"
+  tar_file: "/tmp/py{{ versions.py312 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py312 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py312 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py312 }}/bin/python3.12"
 
 venv24:
   version: "{{ venv_versions.py24 }}"
