@@ -15,7 +15,7 @@ On those occasions rather than replacing the version provided by your distributi
 Installs all necessary tools to build and install Python and then installs
 any given version of Python.
 
-So far Python 2.4, 2.6, 2.7 and  3.1 to 3.11 are supported,
+So far Python 2.4, 2.6, 2.7 and  3.1 to 3.12 are supported,
 plus installing system dependencies to install (not done in this role):
 
 - pillow
@@ -45,6 +45,9 @@ Role Variables
 * python_37: ``true/false`` (defaults to **false**)
 * python_38: ``true/false`` (defaults to **false**)
 * python_39: ``true/false`` (defaults to **false**)
+* python_310: ``true/false`` (defaults to **false**)
+* python_311: ``true/false`` (defaults to **false**)
+* python_312: ``true/false`` (defaults to **false**)
 * pillow: ``true/false`` (defaults to **false**)
 * lxml: ``true/false`` (defaults to **false**)
 
