@@ -3,7 +3,7 @@ galaxy_info:
   author: Gil Forcada Codinachs
   description: Install all dependencies and compile any version of Python
   license: BSD
-  min_ansible_version: 2.2
+  min_ansible_version: '2.2'
   platforms:
     - name: Ubuntu
       versions:

@@ -1,74 +1,80 @@
 ---
 
-- name: py26 | Check that py26 is still not installed
+- name: Python 2.6 | Check that py26 is still not installed
   become: true
-  stat: path="{{ py26.bin }}"
+  ansible.builtin.stat:
+    path: "{{ py26.bin }}"
   register: py26_already_installed
   ignore_errors: true
 
-- name: py26 | Download
-  get_url:
-    url="{{ py26.url }}"
-    dest="{{ py26.tar_file }}"
-    checksum="md5:{{ py26.md5 }}"
+- name: Python 2.6 | Download
+  ansible.builtin.get_url:
+    url: "{{ py26.url }}"
+    dest: "{{ py26.tar_file }}"
+    checksum: "md5:{{ py26.md5 }}"
+    mode: "0440"
   when: python_26 and not py26_already_installed.stat.exists
 
-- name: py26 | Uncompress
-  unarchive:
-    src={{ py26.tar_file }}
-    dest=/tmp
-    copy=no
-    creates="{{ py26.sources }}"
+- name: Python 2.6 | Uncompress
+  ansible.builtin.unarchive:
+    src: "{{ py26.tar_file }}"
+    dest: /tmp
+    copy: false
+    creates: "{{ py26.sources }}"
   when: python_26 and not py26_already_installed.stat.exists
 
-- name: py26 | Configure sources
+- name: Python 2.6 | Configure sources
   become: true
-  command: "./configure --prefix {{ py26.install }}"
+  ansible.builtin.command: "./configure --prefix {{ py26.install }}"
   args:
     chdir: "{{ py26.sources }}"
   when: python_26 and not py26_already_installed.stat.exists
+  register: output
+  changed_when: output.rc != 0
 
-- name: py26 | Tweak sources
+- name: Python 2.6 | Tweak sources
   become: true
-  lineinfile:
-    dest="{{ py26.sources }}/Modules/Setup"
-    regexp=^#zlib(.*)
-    line=zlib\1
-    backrefs=yes
+  ansible.builtin.lineinfile:
+    dest: "{{ py26.sources }}/Modules/Setup"
+    regexp: ^#zlib(.*)
+    line: zlib\1
+    backrefs: true
   when: python_26 and not py26_already_installed.stat.exists
 
-- name: py26 | Tweak sources
+- name: Python 2.6 | Tweak sources
   become: true
-  lineinfile:
-    dest="{{ py26.sources }}/Modules/Setup"
-    regexp=^#_sha256(.*)
-    line=_sha256\1
-    backrefs=yes
+  ansible.builtin.lineinfile:
+    dest: "{{ py26.sources }}/Modules/Setup"
+    regexp: ^#_sha256(.*)
+    line: _sha256\1
+    backrefs: true
   when: python_26 and not py26_already_installed.stat.exists
 
-- name: py26 | Tweak sources
+- name: Python 2.6 | Tweak sources
   become: true
-  lineinfile:
-    dest="{{ py26.sources }}/Modules/Setup"
-    regexp=^#_sha512(.*)
-    line=_sha512\1
-    backrefs=yes
+  ansible.builtin.lineinfile:
+    dest: "{{ py26.sources }}/Modules/Setup"
+    regexp: ^#_sha512(.*)
+    line: _sha512\1
+    backrefs: true
   when: python_26 and not py26_already_installed.stat.exists
 
-- name: py26 | Compile and install
+- name: Python 2.6 | Compile and install
   become: true
-  command: "{{ item }}"
+  ansible.builtin.command: "{{ item }}"
   args:
     chdir: "{{ py26.sources }}"
   with_items:
     - make
     - make install
   when: python_26 and not py26_already_installed.stat.exists
+  register: output
+  changed_when: output.rc != 0
 
-- name: py26 | Create python_major_version symlink
+- name: Python 2.6 | Create python_major_version symlink
   become: true
-  file:
-    src={{ py26.install }}
-    dest='{{ base_install_folder }}/python{{ py26.major_version }}'
-    state=link
+  ansible.builtin.file:
+    src: "{{ py26.install }}"
+    dest: "{{ base_install_folder }}/python{{ py26.major_version }}"
+    state: link
   when: python_26 and not py26_already_installed.stat.exists

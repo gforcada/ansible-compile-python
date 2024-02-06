@@ -1,29 +1,31 @@
 ---
 
-- name: "virtualenv for {{ py_data.version }} | Check if virtualenv is already installed"
+- name: "Virtualenv for {{ py_data.version }} | Check if virtualenv is already installed"
   become: true
-  stat: path="{{ py_data.install }}/bin/virtualenv"
+  ansible.builtin.stat:
+    path: "{{ py_data.install }}/bin/virtualenv"
   register: already_installed
   ignore_errors: true
   when: should_install
 
-- name: "virtualenv for {{ py_data.version }} | Download"
-  get_url:
-    url="{{ venv_data.url }}"
-    dest="{{ venv_data.tar_file }}"
-    checksum="md5:{{ venv_data.md5 }}"
+- name: "Virtualenv for {{ py_data.version }} | Download"
+  ansible.builtin.get_url:
+    url: "{{ venv_data.url }}"
+    dest: "{{ venv_data.tar_file }}"
+    checksum: "md5:{{ venv_data.md5 }}"
+    mode: "0440"
   when: should_install and not already_installed.stat.exists
 
-- name: "virtualenv for {{ py_data.version }} | Uncompress"
-  unarchive:
-    src="{{ venv_data.tar_file }}"
-    dest=/tmp
-    copy=no
+- name: "Virtualenv for {{ py_data.version }} | Uncompress"
+  ansible.builtin.unarchive:
+    src: "{{ venv_data.tar_file }}"
+    dest: /tmp
+    copy: false
   when: should_install and not already_installed.stat.exists
 
 - name: " {{ py_data.version }} | Install virtualenv"
   become: true
-  command: "{{ item }}"
+  ansible.builtin.command: "{{ item }}"
   args:
     chdir: "{{ venv_data.sources }}"
     creates: "{{ py_data.install }}/bin/virtualenv"
