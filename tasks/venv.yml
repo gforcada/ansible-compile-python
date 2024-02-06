@@ -1,6 +1,6 @@
 ---
 
-- name: "Virtualenv for {{ py_data.version }} | Check if virtualenv is already installed"
+- name: "Virtualenv {{ py_data.version }} | Check if it is already installed"
   become: true
   ansible.builtin.stat:
     path: "{{ py_data.install }}/bin/virtualenv"

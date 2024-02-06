@@ -1,6 +1,6 @@
 ---
 
-- name: "{{ py_data.version }} | Check that {{ py_data.version }} is still not installed"
+- name: "{{ py_data.version }} | Check that it is still not installed"
   become: true
   ansible.builtin.stat:
     path: "{{ py_data.bin }}"

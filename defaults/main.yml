@@ -65,11 +65,13 @@ venv_versions:
 # fine grained settings
 ##
 base_install_folder: "/srv"
+ftp_url: "https://www.python.org/ftp/python"
+pkg_url: "https://files.pythonhosted.org/packages"
 
 py24:
   version: "{{ versions.py24 }}"
   major_version: "2.4"
-  url: "https://www.python.org/ftp/python/{{ versions.py24 }}/Python-{{ versions.py24 }}.tar.bz2"
+  url: "{{ ftp_url }}/{{ versions.py24 }}/Python-{{ versions.py24 }}.tar.bz2"
   md5: "{{ hashes.py24 }}"
   tar_file: "/tmp/py{{ versions.py24 }}.tar.bz2"
   sources: "/tmp/Python-{{ versions.py24 }}"
@@ -79,7 +81,7 @@ py24:
 py26:
   version: "{{ versions.py26 }}"
   major_version: "2.6"
-  url: "https://www.python.org/ftp/python/{{ versions.py26 }}/Python-{{ versions.py26 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py26 }}/Python-{{ versions.py26 }}.tar.xz"
   md5: "{{ hashes.py26 }}"
   tar_file: "/tmp/py{{ versions.py26 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py26 }}"
@@ -89,7 +91,7 @@ py26:
 py27:
   version: "{{ versions.py27 }}"
   major_version: "2.7"
-  url: "https://www.python.org/ftp/python/{{ versions.py27 }}/Python-{{ versions.py27 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py27 }}/Python-{{ versions.py27 }}.tar.xz"
   md5: "{{ hashes.py27 }}"
   tar_file: "/tmp/py{{ versions.py27 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py27 }}"
@@ -99,7 +101,7 @@ py27:
 py31:
   version: "{{ versions.py31 }}"
   major_version: "3.1"
-  url: "https://www.python.org/ftp/python/{{ versions.py31 }}/Python-{{ versions.py31 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py31 }}/Python-{{ versions.py31 }}.tar.xz"
   md5: "{{ hashes.py31 }}"
   tar_file: "/tmp/py{{ versions.py31 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py31 }}"
@@ -109,7 +111,7 @@ py31:
 py32:
   version: "{{ versions.py32 }}"
   major_version: "3.2"
-  url: "https://www.python.org/ftp/python/{{ versions.py32 }}/Python-{{ versions.py32 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py32 }}/Python-{{ versions.py32 }}.tar.xz"
   md5: "{{ hashes.py32 }}"
   tar_file: "/tmp/py{{ versions.py32 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py32 }}"
@@ -119,7 +121,7 @@ py32:
 py33:
   version: "{{ versions.py33 }}"
   major_version: "3.3"
-  url: "https://www.python.org/ftp/python/{{ versions.py33 }}/Python-{{ versions.py33 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py33 }}/Python-{{ versions.py33 }}.tar.xz"
   md5: "{{ hashes.py33 }}"
   tar_file: "/tmp/py{{ versions.py33 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py33 }}"
@@ -129,7 +131,7 @@ py33:
 py34:
   version: "{{ versions.py34 }}"
   major_version: "3.4"
-  url: "https://www.python.org/ftp/python/{{ versions.py34 }}/Python-{{ versions.py34 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py34 }}/Python-{{ versions.py34 }}.tar.xz"
   md5: "{{ hashes.py34 }}"
   tar_file: "/tmp/py{{ versions.py34 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py34 }}"
@@ -139,7 +141,7 @@ py34:
 py35:
   version: "{{ versions.py35 }}"
   major_version: "3.5"
-  url: "https://www.python.org/ftp/python/{{ versions.py35 }}/Python-{{ versions.py35 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py35 }}/Python-{{ versions.py35 }}.tar.xz"
   md5: "{{ hashes.py35 }}"
   tar_file: "/tmp/py{{ versions.py35 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py35 }}"
@@ -149,7 +151,7 @@ py35:
 py36:
   version: "{{ versions.py36 }}"
   major_version: "3.6"
-  url: "https://www.python.org/ftp/python/{{ versions.py36 }}/Python-{{ versions.py36 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py36 }}/Python-{{ versions.py36 }}.tar.xz"
   md5: "{{ hashes.py36 }}"
   tar_file: "/tmp/py{{ versions.py36 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py36 }}"
@@ -159,7 +161,7 @@ py36:
 py37:
   version: "{{ versions.py37 }}"
   major_version: "3.7"
-  url: "https://www.python.org/ftp/python/{{ versions.py37 }}/Python-{{ versions.py37 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py37 }}/Python-{{ versions.py37 }}.tar.xz"
   md5: "{{ hashes.py37 }}"
   tar_file: "/tmp/py{{ versions.py37 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py37 }}"
@@ -169,7 +171,7 @@ py37:
 py38:
   version: "{{ versions.py38 }}"
   major_version: "3.8"
-  url: "https://www.python.org/ftp/python/{{ versions.py38 }}/Python-{{ versions.py38 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py38 }}/Python-{{ versions.py38 }}.tar.xz"
   md5: "{{ hashes.py38 }}"
   tar_file: "/tmp/py{{ versions.py38 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py38 }}"
@@ -179,7 +181,7 @@ py38:
 py39:
   version: "{{ versions.py39 }}"
   major_version: "3.9"
-  url: "https://www.python.org/ftp/python/{{ versions.py39 }}/Python-{{ versions.py39 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py39 }}/Python-{{ versions.py39 }}.tar.xz"
   md5: "{{ hashes.py39 }}"
   tar_file: "/tmp/py{{ versions.py39 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py39 }}"
@@ -189,7 +191,7 @@ py39:
 py310:
   version: "{{ versions.py310 }}"
   major_version: "3.10"
-  url: "https://www.python.org/ftp/python/{{ versions.py310 }}/Python-{{ versions.py310 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py310 }}/Python-{{ versions.py310 }}.tar.xz"
   md5: "{{ hashes.py310 }}"
   tar_file: "/tmp/py{{ versions.py310 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py310 }}"
@@ -199,7 +201,7 @@ py310:
 py311:
   version: "{{ versions.py311 }}"
   major_version: "3.11"
-  url: "https://www.python.org/ftp/python/{{ versions.py311 }}/Python-{{ versions.py311 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py311 }}/Python-{{ versions.py311 }}.tar.xz"
   md5: "{{ hashes.py311 }}"
   tar_file: "/tmp/py{{ versions.py311 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py311 }}"
@@ -209,30 +211,34 @@ py311:
 py312:
   version: "{{ versions.py312 }}"
   major_version: "3.12"
-  url: "https://www.python.org/ftp/python/{{ versions.py312 }}/Python-{{ versions.py312 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py312 }}/Python-{{ versions.py312 }}.tar.xz"
   md5: "{{ hashes.py312 }}"
   tar_file: "/tmp/py{{ versions.py312 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.py312 }}"
   install: "{{ base_install_folder }}/python{{ versions.py312 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py312 }}/bin/python3.12"
 
+
 venv24:
   version: "{{ venv_versions.py24 }}"
-  url: "https://files.pythonhosted.org/packages/16/86/7b88d35d0a353ec70e42aa37fd8b0bd1c643419c80f022ffaafa4d6449f0/virtualenv-1.7.2.tar.gz"
+  file_hash: "7b88d35d0a353ec70e42aa37fd8b0bd1c643419c80f022ffaafa4d6449f0"
+  url: "{{ pkg_url }}/16/86/{{ file_hash }}/virtualenv-1.7.2.tar.gz"
   md5: "b5d63b05373a4344ae099a68875aae78"
   tar_file: "/tmp/virtualenv-{{ venv_versions.py24 }}.tar.gz"
   sources: "/tmp/virtualenv-{{ venv_versions.py24 }}"
 
 venv26:
   version: "{{ venv_versions.py26 }}"
-  url: "https://files.pythonhosted.org/packages/d5/5b/f425e456e017af4801bb08920e30c149a44ac0c194f2225bdb712e77701c/virtualenv-1.10.tar.gz"
+  file_hash: "f425e456e017af4801bb08920e30c149a44ac0c194f2225bdb712e77701c"
+  url: "{{ pkg_url }}/d5/5b/{{ file_hash }}/virtualenv-1.10.tar.gz"
   md5: "9745c28256c70c76d36adb3767a00212"
   tar_file: "/tmp/virtualenv-{{ venv_versions.py26 }}.tar.gz"
   sources: "/tmp/virtualenv-{{ venv_versions.py26 }}"
 
 venv27:
   version: "{{ venv_versions.py27 }}"
-  url: "https://files.pythonhosted.org/packages/37/27/706af3ee62032933a3217454609c50a5325a6bd9c2c2f495b58c456ba286/virtualenv-16.6.1.tar.gz"
+  file_hash: "706af3ee62032933a3217454609c50a5325a6bd9c2c2f495b58c456ba286"
+  url: "{{ pkg_url }}/37/27/{{ file_hash }}/virtualenv-16.6.1.tar.gz"
   md5: "b05b03dc6ecb3caaa3d58bfcccf4e786"
   tar_file: "/tmp/virtualenv-{{ venv_versions.py27 }}.tar.gz"
   sources: "/tmp/virtualenv-{{ venv_versions.py27 }}"
