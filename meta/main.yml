@@ -1,14 +1,18 @@
 ---
+
+dependencies: []
+
 galaxy_info:
   author: Gil Forcada Codinachs
   description: Install all dependencies and compile any version of Python
   role_name: compile_python
   namespace: gforcada
-  license: BSD
+  license: BSD-3-Clause
   min_ansible_version: '2.2'
   platforms:
     - name: Ubuntu
       versions:
-        - trusty
-        - xenial
-dependencies: []
+        - jammy
+  galaxy_tags:
+    - python
+    - compile
