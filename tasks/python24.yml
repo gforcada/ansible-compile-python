@@ -1,56 +1,62 @@
 ---
 
-- name: py24 | Check that py24 is still not installed
+- name: Python 2.4 | Check that py24 is still not installed
   become: true
-  stat: path="{{ py24.bin }}"
+  ansible.builtin.stat:
+    path: "{{ py24.bin }}"
   register: py24_already_installed
   ignore_errors: true
 
-- name: py24 | Download
-  get_url:
-    url="{{ py24.url }}"
-    dest="{{ py24.tar_file }}"
-    checksum="md5:{{ py24.md5 }}"
+- name: Python 2.4 | Download
+  ansible.builtin.get_url:
+    url: "{{ py24.url }}"
+    dest: "{{ py24.tar_file }}"
+    checksum: "md5:{{ py24.md5 }}"
+    mode: "0440"
   when: python_24 and not py24_already_installed.stat.exists
 
-- name: py24 | Uncompress
-  unarchive:
-    src={{ py24.tar_file }}
-    dest=/tmp
-    copy=no
-    creates="{{ py24.sources }}"
+- name: Python 2.4 | Uncompress
+  ansible.builtin.unarchive:
+    src: "{{ py24.tar_file }}"
+    dest: /tmp
+    copy: false
+    creates: "{{ py24.sources }}"
   when: python_24 and not py24_already_installed.stat.exists
 
-- name: py24 | Configure sources
+- name: Python 2.4 | Configure sources
   become: true
-  command: "./configure --prefix {{ py24.install }}"
+  ansible.builtin.command: "./configure --prefix {{ py24.install }}"
   args:
     chdir: "{{ py24.sources }}"
   when: python_24 and not py24_already_installed.stat.exists
+  register: output
+  changed_when: output.rc != 0
 
-- name: py24 | Tweak sources
+- name: Python 2.4 | Tweak sources
   become: true
-  lineinfile:
-    dest="{{ py24.sources }}/Modules/Setup"
-    regexp=^#zlib(.*)
-    line=zlib\1
-    backrefs=yes
+  ansible.builtin.lineinfile:
+    dest: "{{ py24.sources }}/Modules/Setup"
+    regexp: ^#zlib(.*)
+    line: zlib\1
+    backrefs: true
   when: python_24 and not py24_already_installed.stat.exists
 
-- name: py24 | Compile and install
+- name: Python 2.4 | Compile and install
   become: true
-  command: "{{ item }}"
+  ansible.builtin.command: "{{ item }}"
   args:
     chdir: "{{ py24.sources }}"
   with_items:
     - make
     - make install
   when: python_24 and not py24_already_installed.stat.exists
+  register: output
+  changed_when: output.rc != 0
 
-- name: p24 | Create python_major_version symlink
+- name: Python 2.4 | Create python_major_version symlink
   become: true
-  file:
-    src={{ py24.install }}
-    dest='{{ base_install_folder }}/python{{ py24.major_version }}'
-    state=link
+  ansible.builtin.file:
+    src: "{{ py24.install }}"
+    dest: "{{ base_install_folder }}/python{{ py24.major_version }}"
+    state: link
   when: python_24 and not py24_already_installed.stat.exists

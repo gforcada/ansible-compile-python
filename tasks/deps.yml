@@ -2,12 +2,12 @@
 
 - name: Update APT sources
   become: true
-  apt:
-    update_cache=yes
+  ansible.builtin.apt:
+    update_cache: true
 
-- name: Python deps | Install compile time depdendencies
+- name: Dependencies Python | Install compile time depdendencies
   become: true
-  apt:
+  ansible.builtin.apt:
     state: present
     name:
       - autotools-dev
@@ -35,9 +35,9 @@
       - tk-dev
       - zlib1g-dev
 
-- name: Python 3.6 deps | Install compile time dependencies
+- name: Dependencies Python 3.6 | Install compile time dependencies
   become: true
-  apt:
+  ansible.builtin.apt:
     state: present
     name:
       - liblzma-dev
@@ -47,9 +47,9 @@
 # Pillow
 ##
 
-- name: Pillow deps | Install compile time depdendencies
+- name: Dependencies Pillow | Install compile time depdendencies
   become: true
-  apt:
+  ansible.builtin.apt:
     state: present
     name:
       - cmake
@@ -66,9 +66,9 @@
 # lxml
 ##
 
-- name: lxml deps | Install compile time dependencies
+- name: Dependencies lxml | Install compile time dependencies
   become: true
-  apt:
+  ansible.builtin.apt:
     state: present
     name:
       - libxml2

@@ -1,0 +1,3 @@
+# This file contains ignores rule violations for ansible-lint
+tasks/python_generic.yml name[template]
+tasks/venv.yml name[template]

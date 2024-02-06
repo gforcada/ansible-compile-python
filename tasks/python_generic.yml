@@ -1,29 +1,31 @@
 ---
 
-- name: "{{ py_data.version }} | Check that {{ py_data.version }} is still not installed"
+- name: "{{ py_data.version }} | Check that it is still not installed"
   become: true
-  stat: path="{{ py_data.bin }}"
+  ansible.builtin.stat:
+    path: "{{ py_data.bin }}"
   register: already_installed
   ignore_errors: true
 
 - name: "{{ py_data.version }} | Download"
-  get_url:
-    url="{{ py_data.url }}"
-    dest="{{ py_data.tar_file }}"
-    checksum="md5:{{ py_data.md5 }}"
+  ansible.builtin.get_url:
+    url: "{{ py_data.url }}"
+    dest: "{{ py_data.tar_file }}"
+    checksum: "md5:{{ py_data.md5 }}"
+    mode: "0440"
   when: should_install and not already_installed.stat.exists
 
 - name: "{{ py_data.version }} | Uncompress"
-  unarchive:
-    src={{ py_data.tar_file }}
-    dest=/tmp
-    copy=no
-    creates="{{ py_data.sources }}"
+  ansible.builtin.unarchive:
+    src: "{{ py_data.tar_file }}"
+    dest: /tmp
+    copy: false
+    creates: "{{ py_data.sources }}"
   when: should_install and not already_installed.stat.exists
 
 - name: "{{ py_data.version }} | Compile and install"
   become: true
-  command: "{{ item }}"
+  ansible.builtin.command: "{{ item }}"
   args:
     chdir: "{{ py_data.sources }}"
   with_items:
@@ -31,11 +33,13 @@
     - make
     - make install
   when: should_install and not already_installed.stat.exists
+  register: output
+  changed_when: output.rc != 0
 
 - name: "{{ py_data.version }} | Create python_major_version symlink"
   become: true
-  file:
-    src={{ py_data.install }}
-    dest='{{ base_install_folder }}/python{{ py_data.major_version }}'
-    state=link
+  ansible.builtin.file:
+    src: "{{ py_data.install }}"
+    dest: "{{ base_install_folder }}/python{{ py_data.major_version }}"
+    state: link
   when: should_install and not already_installed.stat.exists
