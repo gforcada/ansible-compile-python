@@ -13,7 +13,7 @@
     dest: "{{ py_data.tar_file }}"
     checksum: "md5:{{ py_data.md5 }}"
     mode: "0440"
-  when: should_install and not already_installed.stat.exists
+  when: not already_installed.stat.exists
 
 - name: "{{ py_data.version }} | Uncompress"
   ansible.builtin.unarchive:
@@ -21,7 +21,7 @@
     dest: /tmp
     copy: false
     creates: "{{ py_data.sources }}"
-  when: should_install and not already_installed.stat.exists
+  when: not already_installed.stat.exists
 
 - name: "{{ py_data.version }} | Compile and install"
   become: true
@@ -32,7 +32,7 @@
     - "./configure --enable-optimizations --prefix {{ py_data.install }}"
     - make
     - make install
-  when: should_install and not already_installed.stat.exists
+  when: not already_installed.stat.exists
   register: output
   changed_when: output.rc != 0
 
@@ -42,4 +42,4 @@
     src: "{{ py_data.install }}"
     dest: "{{ base_install_folder }}/python{{ py_data.major_version }}"
     state: link
-  when: should_install and not already_installed.stat.exists
+  when: not already_installed.stat.exists
