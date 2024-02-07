@@ -18,6 +18,7 @@ python_38: true
 python_39: false
 python_310: false
 python_311: false
+python_312: false
 
 pillow: false
 lxml: false
