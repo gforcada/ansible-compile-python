@@ -1,5 +1,4 @@
 ---
-
 ##
 # role main options
 ##
@@ -218,7 +217,6 @@ py312:
   sources: "/tmp/Python-{{ versions.py312 }}"
   install: "{{ base_install_folder }}/python{{ versions.py312 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py312 }}/bin/python3.12"
-
 
 venv24:
   version: "{{ venv_versions.py24 }}"
