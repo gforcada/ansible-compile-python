@@ -1,13 +1,13 @@
 ---
 
-- name: "{{ py_data.version }} | Check that it is still not installed"
+- name: "Python | Check that it is still not installed | {{ py_data.version }}"
   become: true
   ansible.builtin.stat:
     path: "{{ py_data.bin }}"
   register: already_installed
   ignore_errors: true
 
-- name: "{{ py_data.version }} | Download"
+- name: "Python | Download | {{ py_data.version }}"
   ansible.builtin.get_url:
     url: "{{ py_data.url }}"
     dest: "{{ py_data.tar_file }}"
@@ -15,7 +15,7 @@
     mode: "0440"
   when: not already_installed.stat.exists
 
-- name: "{{ py_data.version }} | Uncompress"
+- name: "Python | Uncompress | {{ py_data.version }}"
   ansible.builtin.unarchive:
     src: "{{ py_data.tar_file }}"
     dest: /tmp
@@ -23,7 +23,7 @@
     creates: "{{ py_data.sources }}"
   when: not already_installed.stat.exists
 
-- name: "{{ py_data.version }} | Compile and install"
+- name: "Python | Compile and install | {{ py_data.version }}"
   become: true
   ansible.builtin.command: "{{ item }}"
   args:
@@ -36,7 +36,7 @@
   register: output
   changed_when: output.rc != 0
 
-- name: "{{ py_data.version }} | Create python_major_version symlink"
+- name: "Python | Create symlink | {{ py_data.version }}"
   become: true
   ansible.builtin.file:
     src: "{{ py_data.install }}"
