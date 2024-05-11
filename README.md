@@ -10,12 +10,12 @@ On those occasions
 rather than replacing the version provided by your distribution
 is usually better to compile your own.
 
-*And that's what this ansible playbook is for!*
+_And that's what this ansible playbook is for!_
 
 Installs all necessary tools to build and install Python and then installs
 any given version of Python.
 
-So far Python 2.4, 2.6, 2.7 and  3.1 to 3.12 are supported,
+So far Python 2.4, 2.6, 2.7 and 3.1 to 3.12 are supported,
 plus installing system dependencies to install (not done in this role):
 
 - pillow
@@ -55,7 +55,6 @@ None
 
 Ubuntu 23.04 (jammy)
 
-
 ## Example Playbook
 
 ```yml
@@ -83,4 +82,3 @@ Gil Forcada Codinachs
 Code can be found at: https://github.com/gforcada/ansible-compile-python
 
 Please report issues at: https://github.com/gforcada/ansible-compile-python/issues
-
