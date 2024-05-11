@@ -1,6 +1,6 @@
 ---
 
-- name: "Virtualenv {{ py_data.version }} | Check if it is already installed"
+- name: "Virtualenv | Check if it is already installed | {{ py_data.version }}"
   become: true
   ansible.builtin.stat:
     path: "{{ py_data.install }}/bin/virtualenv"
@@ -8,7 +8,7 @@
   ignore_errors: true
   when: should_install
 
-- name: "Virtualenv for {{ py_data.version }} | Download"
+- name: "Virtualenv | Download | {{ py_data.version }}"
   ansible.builtin.get_url:
     url: "{{ venv_data.url }}"
     dest: "{{ venv_data.tar_file }}"
@@ -16,14 +16,14 @@
     mode: "0440"
   when: should_install and not already_installed.stat.exists
 
-- name: "Virtualenv for {{ py_data.version }} | Uncompress"
+- name: "Virtualenv | Uncompress | {{ py_data.version }}"
   ansible.builtin.unarchive:
     src: "{{ venv_data.tar_file }}"
     dest: /tmp
     copy: false
   when: should_install and not already_installed.stat.exists
 
-- name: " {{ py_data.version }} | Install virtualenv"
+- name: " Virtualenv | Install | {{ py_data.version }}"
   become: true
   ansible.builtin.command: "{{ item }}"
   args:

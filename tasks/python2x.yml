@@ -1,0 +1,14 @@
+---
+
+- name: Install Python 2.4
+  ansible.builtin.import_tasks: python24.yml
+
+- name: Install Python 2.6
+  ansible.builtin.import_tasks: python26.yml
+
+- name: Install Python 2.7
+  ansible.builtin.include_tasks:
+    file: python_generic.yml
+  vars:
+    py_data: "{{ py27 }}"
+  when: python_27
