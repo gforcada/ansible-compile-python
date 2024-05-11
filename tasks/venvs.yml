@@ -4,22 +4,22 @@
   ansible.builtin.include_tasks:
     file: venv.yml
   vars:
-    py_data: py24
-    venv_data: venv24
+    py_data: "{{ py24 }}"
+    venv_data: "{{ venv24 }}"
   when: python_24
 
 - name: Install Virtualenv for Python 2.6
   ansible.builtin.include_tasks:
     file: venv.yml
   vars:
-    py_data: py26
-    venv_data: venv26
+    py_data: "{{ py26 }}"
+    venv_data: "{{ venv26 }}"
   when: python_26
 
 - name: Install Virtualenv for Python 2.7
   ansible.builtin.include_tasks:
     file: venv.yml
   vars:
-    py_data: py27
-    venv_data: venv27
+    py_data: "{{ py27 }}"
+    venv_data: "{{ venv27 }}"
   when: python_27
