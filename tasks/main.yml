@@ -100,6 +100,13 @@
     py_data: py312
   when: python_312
 
+- name: Install Python 3.13
+  ansible.builtin.include_tasks:
+    file: python_generic.yml
+  vars:
+    py_data: py313
+  when: python_313
+
 - name: Install Virtualenv for Python 2.4
   ansible.builtin.include_tasks:
     file: venv.yml
