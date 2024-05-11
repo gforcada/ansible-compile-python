@@ -13,11 +13,11 @@ python_34: false
 python_35: false
 python_36: false
 python_37: false
-python_38: true
+python_38: false
 python_39: false
 python_310: false
 python_311: false
-python_312: false
+python_312: true
 
 pillow: false
 lxml: false
