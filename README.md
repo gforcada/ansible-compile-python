@@ -67,8 +67,6 @@ Ubuntu 23.04 (jammy)
     - python_36: true
 ```
 
-There is an example `Vagrantfile` to test it locally.
-
 ## License
 
 BSD
