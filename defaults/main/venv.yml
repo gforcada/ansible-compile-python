@@ -1,0 +1,49 @@
+---
+##
+# Virtual environment related configuration
+#
+# !! Note that Python 2.7 is installed slightly different
+##
+
+pkg_url: "https://files.pythonhosted.org/packages"
+
+venv_versions:
+  py24: "1.7.2"
+  py26: "1.10"
+  py27: "20.15.1"
+
+venv_url_hashes:
+  py24: "7b88d35d0a353ec70e42aa37fd8b0bd1c643419c80f022ffaafa4d6449f0"
+  py26: "f425e456e017af4801bb08920e30c149a44ac0c194f2225bdb712e77701c"
+  py27: "df7c7b1b7a5ac4e41fac24c3682c1cc32f2c1d683d308bba2500338d1e3e"
+
+venv_file_hashes:
+  py24: "b5d63b05373a4344ae099a68875aae78"
+  py26: "9745c28256c70c76d36adb3767a00212"
+  py27: "e9a76a95dc28cf9b55cfc87bd4eef20c"
+
+venv27_wheel_name: "virtualenv-{{ venv_versions.py27 }}-py2.py3-none-any.whl"
+
+##
+# main venvs configuration, based on the variables above
+##
+
+venv24:
+  version: "{{ venv_versions.py24 }}"
+  url: "{{ pkg_url }}/16/86/{{ venv_url_hashes.py24 }}/virtualenv-1.7.2.tar.gz"
+  md5: "{{ venv_file_hashes.py24 }}"
+  tar_file: "/tmp/virtualenv-{{ venv_versions.py24 }}.tar.gz"
+  sources: "/tmp/virtualenv-{{ venv_versions.py24 }}"
+
+venv26:
+  version: "{{ venv_versions.py26 }}"
+  url: "{{ pkg_url }}/d5/5b/{{ venv_url_hashes.py26 }}/virtualenv-1.10.tar.gz"
+  md5: "{{ venv_file_hashes.py26 }}"
+  tar_file: "/tmp/virtualenv-{{ venv_versions.py26 }}.tar.gz"
+  sources: "/tmp/virtualenv-{{ venv_versions.py26 }}"
+
+venv27:
+  version: "{{ venv_versions.py27 }}"
+  url: "{{ pkg_url }}/6f/43/{{ venv_url_hashes.py27 }}/{{ venv27_wheel_name }}"
+  md5: "{{ venv_file_hashes.py27 }}"
+  wheel_file: "/tmp/{{ venv27_wheel_name }}"
