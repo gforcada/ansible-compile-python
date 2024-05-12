@@ -1,0 +1,39 @@
+---
+##
+# Virtual environment related configuration
+##
+
+pkg_url: "https://files.pythonhosted.org/packages"
+
+venv_versions:
+  py24: "1.7.2"
+  py26: "1.10"
+  py27: "16.6.1"
+
+##
+# main venvs configuration, based on the variables above
+##
+
+venv24:
+  version: "{{ venv_versions.py24 }}"
+  file_hash: "7b88d35d0a353ec70e42aa37fd8b0bd1c643419c80f022ffaafa4d6449f0"
+  url: "{{ pkg_url }}/16/86/{{ file_hash }}/virtualenv-1.7.2.tar.gz"
+  md5: "b5d63b05373a4344ae099a68875aae78"
+  tar_file: "/tmp/virtualenv-{{ venv_versions.py24 }}.tar.gz"
+  sources: "/tmp/virtualenv-{{ venv_versions.py24 }}"
+
+venv26:
+  version: "{{ venv_versions.py26 }}"
+  file_hash: "f425e456e017af4801bb08920e30c149a44ac0c194f2225bdb712e77701c"
+  url: "{{ pkg_url }}/d5/5b/{{ file_hash }}/virtualenv-1.10.tar.gz"
+  md5: "9745c28256c70c76d36adb3767a00212"
+  tar_file: "/tmp/virtualenv-{{ venv_versions.py26 }}.tar.gz"
+  sources: "/tmp/virtualenv-{{ venv_versions.py26 }}"
+
+venv27:
+  version: "{{ venv_versions.py27 }}"
+  file_hash: "706af3ee62032933a3217454609c50a5325a6bd9c2c2f495b58c456ba286"
+  url: "{{ pkg_url }}/37/27/{{ file_hash }}/virtualenv-16.6.1.tar.gz"
+  md5: "b05b03dc6ecb3caaa3d58bfcccf4e786"
+  tar_file: "/tmp/virtualenv-{{ venv_versions.py27 }}.tar.gz"
+  sources: "/tmp/virtualenv-{{ venv_versions.py27 }}"

@@ -1,27 +1,9 @@
 ---
 ##
-# role main options
+# Pythons configuration
 ##
 
-python_24: false
-python_26: false
-python_27: false
-python_31: false
-python_32: false
-python_33: false
-python_34: false
-python_35: false
-python_36: false
-python_37: false
-python_38: false
-python_39: false
-python_310: false
-python_311: false
-python_312: true
-python_313: false
-
-pillow: false
-lxml: false
+ftp_url: "https://www.python.org/ftp/python"
 
 versions:
   py24: "2.4.6"
@@ -59,41 +41,9 @@ hashes:
   py312: "8defb33f0c37aa4bdd3a38ba52abde4e"
   py313: "e1208b22c67c77de72a5e20025b2fb53"
 
-venv_versions:
-  py24: "1.7.2"
-  py26: "1.10"
-  py27: "16.6.1"
-
 ##
-# fine grained settings
+# Specific python version details, based on the variables above
 ##
-base_install_folder: "/srv"
-ftp_url: "https://www.python.org/ftp/python"
-pkg_url: "https://files.pythonhosted.org/packages"
-
-venv24:
-  version: "{{ venv_versions.py24 }}"
-  file_hash: "7b88d35d0a353ec70e42aa37fd8b0bd1c643419c80f022ffaafa4d6449f0"
-  url: "{{ pkg_url }}/16/86/{{ file_hash }}/virtualenv-1.7.2.tar.gz"
-  md5: "b5d63b05373a4344ae099a68875aae78"
-  tar_file: "/tmp/virtualenv-{{ venv_versions.py24 }}.tar.gz"
-  sources: "/tmp/virtualenv-{{ venv_versions.py24 }}"
-
-venv26:
-  version: "{{ venv_versions.py26 }}"
-  file_hash: "f425e456e017af4801bb08920e30c149a44ac0c194f2225bdb712e77701c"
-  url: "{{ pkg_url }}/d5/5b/{{ file_hash }}/virtualenv-1.10.tar.gz"
-  md5: "9745c28256c70c76d36adb3767a00212"
-  tar_file: "/tmp/virtualenv-{{ venv_versions.py26 }}.tar.gz"
-  sources: "/tmp/virtualenv-{{ venv_versions.py26 }}"
-
-venv27:
-  version: "{{ venv_versions.py27 }}"
-  file_hash: "706af3ee62032933a3217454609c50a5325a6bd9c2c2f495b58c456ba286"
-  url: "{{ pkg_url }}/37/27/{{ file_hash }}/virtualenv-16.6.1.tar.gz"
-  md5: "b05b03dc6ecb3caaa3d58bfcccf4e786"
-  tar_file: "/tmp/virtualenv-{{ venv_versions.py27 }}.tar.gz"
-  sources: "/tmp/virtualenv-{{ venv_versions.py27 }}"
 
 py24:
   version: "{{ versions.py24 }}"
