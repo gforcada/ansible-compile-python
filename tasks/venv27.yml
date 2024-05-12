@@ -1,0 +1,41 @@
+---
+
+- name: "Virtualenv | Check if it is already installed | {{ py_data.version }}"
+  become: true
+  ansible.builtin.stat:
+    path: "{{ py_data.install }}/bin/virtualenv"
+  register: already_installed
+  ignore_errors: true
+
+- name: "Virtualenv | Download | {{ py_data.version }}"
+  ansible.builtin.get_url:
+    url: "{{ venv_data.url }}"
+    dest: "{{ venv_data.wheel_file }}"
+    checksum: "md5:{{ venv_data.md5 }}"
+    mode: "0440"
+  when: not already_installed.stat.exists
+
+- name: "Virtualenv | Download | pip"
+  ansible.builtin.get_url:
+    url: "https://bootstrap.pypa.io/pip/2.7/get-pip.py"
+    dest: "/tmp/get-pip.py"
+    checksum: "md5:60e8267eb1b7bc71dc4843eb7bd294d3"
+    mode: "0440"
+  when: not already_installed.stat.exists
+
+- name: "Virtualenv | Install | pip"
+  ansible.builtin.command: "{{ item }}"
+  args:
+    creates: "{{ py_data.install }}/bin/pip"
+  with_items:
+    - "{{ py_data.install }}/bin/python /tmp/get-pip.py"
+  when: not already_installed.stat.exists
+
+- name: " Virtualenv | Install | {{ py_data.version }}"
+  become: true
+  ansible.builtin.command: "{{ item }}"
+  args:
+    creates: "{{ py_data.install }}/bin/virtualenv"
+  with_items:
+    - "{{ py_data.install }}/bin/pip install {{ venv_data.wheel_file }}"
+  when: not already_installed.stat.exists
