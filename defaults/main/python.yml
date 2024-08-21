@@ -20,8 +20,8 @@ versions:
   py39: "3.9.19"
   py310: "3.10.14"
   py311: "3.11.9"
-  py312: "3.12.3"
-  py313: "3.13.0b1"  # on a final release, the url path needs to be adjusted
+  py312: "3.12.5"
+  py313: "3.13.0rc1" # on a final release, the url path needs to be adjusted
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -38,8 +38,8 @@ hashes:
   py39: "87d0f8281237b972ff8b23e0e2c8d325"
   py310: "05148354ce821ba7369e5b7958435400"
   py311: "22ea467e7d915477152e99d5da856ddc"
-  py312: "8defb33f0c37aa4bdd3a38ba52abde4e"
-  py313: "e1208b22c67c77de72a5e20025b2fb53"
+  py312: "02c7d269e077f4034963bba6befdc715"
+  py313: "9213ecfedc510ac2a14c0eeea96baf02"
 
 ##
 # Specific python version details, based on the variables above
