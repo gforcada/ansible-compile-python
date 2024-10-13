@@ -16,12 +16,12 @@ versions:
   py35: "3.5.10"
   py36: "3.6.15"
   py37: "3.7.17"
-  py38: "3.8.19"
-  py39: "3.9.19"
-  py310: "3.10.14"
-  py311: "3.11.9"
-  py312: "3.12.5"
-  py313: "3.13.0rc1" # on a final release, the url path needs to be adjusted
+  py38: "3.8.20"
+  py39: "3.9.20"
+  py310: "3.10.15"
+  py311: "3.11.10"
+  py312: "3.12.7"
+  py313: "3.13.0"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -34,12 +34,12 @@ hashes:
   py35: "75c9c268703654aa6f6f2ae67303dde4"
   py36: "bc04aa6c2a1a172a35012abd668538cd"
   py37: "dd94cab4541b57b88cf3dab32d6336e3"
-  py38: "2532d25930266546822c144b99652254"
-  py39: "87d0f8281237b972ff8b23e0e2c8d325"
-  py310: "05148354ce821ba7369e5b7958435400"
-  py311: "22ea467e7d915477152e99d5da856ddc"
-  py312: "02c7d269e077f4034963bba6befdc715"
-  py313: "9213ecfedc510ac2a14c0eeea96baf02"
+  py38: "745478c81d6382cf46b5e7ad89e56008"
+  py39: "bdcda0fdb99e7e17018f6886fae5e1fd"
+  py310: "8b1faa1b193e4e90c0f17eb2decd89b5"
+  py311: "af59e243df4c7019f941ae51891c10bc"
+  py312: "c6c933c1a0db52597cb45a7910490f93"
+  py313: "726e5b829fcf352326874c1ae599abaa"
 
 ##
 # Specific python version details, based on the variables above
@@ -198,7 +198,7 @@ py312:
 py313:
   version: "{{ versions.py313 }}"
   major_version: "3.13"
-  url: "{{ ftp_url }}/3.13.0/Python-{{ versions.py313 }}.tar.xz"
+  url: "{{ ftp_url }}/{{ versions.py313 }}/Python-{{ versions.py313 }}.tar.xz"
   md5: "{{ hashes.py313 }}"
   tar_file: "/tmp/py{{ versions.py313 }}.tar.xz"
   sources: "/tmp/Python-{{ versions.3.13 }}"
