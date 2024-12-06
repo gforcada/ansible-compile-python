@@ -17,11 +17,11 @@ versions:
   py36: "3.6.15"
   py37: "3.7.17"
   py38: "3.8.20"
-  py39: "3.9.20"
-  py310: "3.10.15"
-  py311: "3.11.10"
-  py312: "3.12.7"
-  py313: "3.13.0"
+  py39: "3.9.21"
+  py310: "3.10.16"
+  py311: "3.11.11"
+  py312: "3.12.8"
+  py313: "3.13.1"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -35,11 +35,11 @@ hashes:
   py36: "bc04aa6c2a1a172a35012abd668538cd"
   py37: "dd94cab4541b57b88cf3dab32d6336e3"
   py38: "745478c81d6382cf46b5e7ad89e56008"
-  py39: "bdcda0fdb99e7e17018f6886fae5e1fd"
-  py310: "8b1faa1b193e4e90c0f17eb2decd89b5"
-  py311: "af59e243df4c7019f941ae51891c10bc"
-  py312: "c6c933c1a0db52597cb45a7910490f93"
-  py313: "726e5b829fcf352326874c1ae599abaa"
+  py39: "e8ab0f9a295f12428310f409abd79e9c"
+  py310: "97b3ee1740f32a92905dd0a99dcb04d5"
+  py311: "3e497037b170fe4be5f462c4964596f2"
+  py312: "d46e5bf9f2e596a3ba45fc0b3c053dd2"
+  py313: "80c16badb94ffe235280d4d9a099b8bc"
 
 ##
 # Specific python version details, based on the variables above
