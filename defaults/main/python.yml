@@ -20,8 +20,8 @@ versions:
   py39: "3.9.21"
   py310: "3.10.16"
   py311: "3.11.11"
-  py312: "3.12.8"
-  py313: "3.13.1"
+  py312: "3.12.9"
+  py313: "3.13.2"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -38,8 +38,8 @@ hashes:
   py39: "e8ab0f9a295f12428310f409abd79e9c"
   py310: "97b3ee1740f32a92905dd0a99dcb04d5"
   py311: "3e497037b170fe4be5f462c4964596f2"
-  py312: "d46e5bf9f2e596a3ba45fc0b3c053dd2"
-  py313: "80c16badb94ffe235280d4d9a099b8bc"
+  py312: "880942124f7d5c01e7b65cbad62dc873"
+  py313: "4c2d9202ab4db02c9d0999b14655dfe5"
 
 ##
 # Specific python version details, based on the variables above
