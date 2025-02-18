@@ -8,7 +8,7 @@ ftp_url: "https://www.python.org/ftp/python"
 versions:
   py24: "2.4.6"
   py26: "2.6.9"
-  py27: "2.7.17"
+  py27: "2.7.18"
   py31: "3.1.5"
   py32: "3.2.6"
   py33: "3.3.7"
@@ -26,7 +26,7 @@ versions:
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
   py26: "933a811f11e3db3d73ae492f6c3a7a76"
-  py27: "b3b6d2c92f42a60667814358ab9f0cfd"
+  py27: "fd6cc8ec0a78c44036f825e739f36e5a"
   py31: "20dd2b7f801dc97db948dd168df4dd52"
   py32: "e0ba4360dfcb4aec735e666cc0ae7b0e"
   py33: "84e2f12f044ca53b577f6224c53f82ac"
