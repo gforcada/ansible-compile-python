@@ -8,7 +8,7 @@ ftp_url: "https://www.python.org/ftp/python"
 versions:
   py24: "2.4.6"
   py26: "2.6.9"
-  py27: "2.7.17"
+  py27: "2.7.18"
   py31: "3.1.5"
   py32: "3.2.6"
   py33: "3.3.7"
@@ -20,13 +20,13 @@ versions:
   py39: "3.9.21"
   py310: "3.10.16"
   py311: "3.11.11"
-  py312: "3.12.8"
-  py313: "3.13.1"
+  py312: "3.12.9"
+  py313: "3.13.2"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
   py26: "933a811f11e3db3d73ae492f6c3a7a76"
-  py27: "b3b6d2c92f42a60667814358ab9f0cfd"
+  py27: "fd6cc8ec0a78c44036f825e739f36e5a"
   py31: "20dd2b7f801dc97db948dd168df4dd52"
   py32: "e0ba4360dfcb4aec735e666cc0ae7b0e"
   py33: "84e2f12f044ca53b577f6224c53f82ac"
@@ -38,8 +38,8 @@ hashes:
   py39: "e8ab0f9a295f12428310f409abd79e9c"
   py310: "97b3ee1740f32a92905dd0a99dcb04d5"
   py311: "3e497037b170fe4be5f462c4964596f2"
-  py312: "d46e5bf9f2e596a3ba45fc0b3c053dd2"
-  py313: "80c16badb94ffe235280d4d9a099b8bc"
+  py312: "880942124f7d5c01e7b65cbad62dc873"
+  py313: "4c2d9202ab4db02c9d0999b14655dfe5"
 
 ##
 # Specific python version details, based on the variables above

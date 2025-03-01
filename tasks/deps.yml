@@ -27,7 +27,6 @@
       - libsqlite3-dev
       - libssl-dev
       - libtinfo-dev
-      - mime-support
       - net-tools
       - netbase
       - quilt
