@@ -29,7 +29,6 @@
       - libtinfo-dev
       - net-tools
       - netbase
-      - quilt
       - tk-dev
       - zlib1g-dev
 
