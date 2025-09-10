@@ -1,6 +1,7 @@
 ---
 
 - name: Add source repository into sources list
+  become: true
   ansible.builtin.apt_repository:
     # yamllint disable-line rule:line-length
     repo: deb-src http://archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main
