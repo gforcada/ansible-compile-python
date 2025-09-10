@@ -1,35 +1,51 @@
 ---
 
+- name: Add source repository into sources list
+  ansible.builtin.apt_repository:
+    # yamllint disable-line rule:line-length
+    repo: deb-src http://archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main
+    state: present
+
 - name: Update APT sources
   become: true
   ansible.builtin.apt:
     update_cache: true
 
-- name: Dependencies Python | Install compile time depdendencies
+# yamllint disable-line rule:line-length
+# See https://devguide.python.org/getting-started/setup-building/#install-dependencies
+- name: Dependencies Python | Install build time dependencies
+  become: true
+  ansible.builtin.apt:
+    state: build-dep
+    name:
+      - python3
+
+# yamllint disable-line rule:line-length
+# Again, see https://devguide.python.org/getting-started/setup-building/#install-dependencies
+- name: Dependencies Python | Install compile time dependencies
   become: true
   ansible.builtin.apt:
     state: present
     name:
-      - autotools-dev
-      - blt-dev
-      - bzip2
-      - dpkg-dev
-      - g++-multilib
-      - gcc-multilib
-      - libbluetooth-dev
+      - build-essential
+      - gdb
+      - lcov
       - libbz2-dev
-      - libexpat1-dev
       - libffi-dev
       - libgdbm-dev
-      - libgpm2
-      - libncursesw5-dev
-      - libreadline-dev
+      - libgdbm-compat-dev
+      - liblzma-dev
+      - libncurses5-dev
+      - libreadline6-dev
       - libsqlite3-dev
       - libssl-dev
-      - libtinfo-dev
-      - net-tools
-      - netbase
+      - libzstd-dev
+      - lzma
+      - lzma-dev
+      - pkg-config
       - tk-dev
+      - uuid-dev
+      - xz-utils
       - zlib1g-dev
 
 - name: Dependencies Python 3.6 | Install compile time dependencies
@@ -44,7 +60,7 @@
 # Pillow
 ##
 
-- name: Dependencies Pillow | Install compile time depdendencies
+- name: Dependencies Pillow | Install compile time dependencies
   become: true
   ansible.builtin.apt:
     state: present
