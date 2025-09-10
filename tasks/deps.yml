@@ -5,7 +5,7 @@
   ansible.builtin.apt:
     update_cache: true
 
-- name: Dependencies Python | Install compile time depdendencies
+- name: Dependencies Python | Install compile time dependencies
   become: true
   ansible.builtin.apt:
     state: present
@@ -44,7 +44,7 @@
 # Pillow
 ##
 
-- name: Dependencies Pillow | Install compile time depdendencies
+- name: Dependencies Pillow | Install compile time dependencies
   become: true
   ansible.builtin.apt:
     state: present
