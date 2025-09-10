@@ -1,9 +1,24 @@
 ---
 
+- name: Add source repository into sources list
+  ansible.builtin.apt_repository:
+    # yamllint disable-line rule:line-length
+    repo: deb-src http://archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main
+    state: present
+
 - name: Update APT sources
   become: true
   ansible.builtin.apt:
     update_cache: true
+
+# yamllint disable-line rule:line-length
+# See https://devguide.python.org/getting-started/setup-building/#install-dependencies
+- name: Dependencies Python | Install build time dependencies
+  become: true
+  ansible.builtin.apt:
+    state: build-dep
+    name:
+      - python3
 
 - name: Dependencies Python | Install compile time dependencies
   become: true
