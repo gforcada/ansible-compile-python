@@ -63,9 +63,8 @@ Ubuntu 23.04 (jammy)
   roles:
     - gforcada.compile-python
   vars:
-    - python_26: true
     - python_27: true
-    - python_36: true
+    - python_313: true
 ```
 
 ## License
