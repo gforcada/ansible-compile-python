@@ -17,11 +17,12 @@ versions:
   py36: "3.6.15"
   py37: "3.7.17"
   py38: "3.8.20"
-  py39: "3.9.23"
-  py310: "3.10.18"
-  py311: "3.11.13"
-  py312: "3.12.11"
-  py313: "3.13.7"
+  py39: "3.9.24"
+  py310: "3.10.19"
+  py311: "3.11.14"
+  py312: "3.12.12"
+  py313: "3.13.8"
+  py314: "3.14.0"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -35,11 +36,12 @@ hashes:
   py36: "bc04aa6c2a1a172a35012abd668538cd"
   py37: "dd94cab4541b57b88cf3dab32d6336e3"
   py38: "745478c81d6382cf46b5e7ad89e56008"
-  py39: "a4e4a53cbde60b743d7c2f9aa38c3b8f"
-  py310: "14ea0982a7dd4dbfc3f50537c723df41"
-  py311: "ec39a8018b9eedf6f0edeb44533bd279"
-  py312: "9613d56b90d0d0cfd19980c7e2956a06"
-  py313: "256cdb3bbf45cdce7499e52ba6c36ea3"
+  py39: "d778f94c0f141ef1d9945f7452fa914d"
+  py310: "ff2739df51da5475e55dbf023d594894"
+  py311: "2f7d50f6e41d61607022dfeb7741df3a"
+  py312: "04feb01316c7bb1b448001adbc63dd23"
+  py313: "ba3da8187b03db6f42052f8707c22564"
+  py314: "41389edaf9c643263cbed9b5ed307df8"
 
 ##
 # Specific python version details, based on the variables above
@@ -204,3 +206,13 @@ py313:
   sources: "/tmp/Python-{{ versions.py313 }}"
   install: "{{ base_install_folder }}/python{{ versions.py313 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py313 }}/bin/python3.13"
+
+py314:
+  version: "{{ versions.py314 }}"
+  major_version: "3.14"
+  url: "{{ ftp_url }}/{{ versions.py314 }}/Python-{{ versions.py314 }}.tar.xz"
+  md5: "{{ hashes.py314 }}"
+  tar_file: "/tmp/py{{ versions.py314 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py314 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py314 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py314 }}/bin/python3.14"

@@ -90,3 +90,10 @@
   vars:
     py_data: "{{ py313 }}"
   when: python_313
+
+- name: Install Python 3.14
+  ansible.builtin.include_tasks:
+    file: python_generic.yml
+  vars:
+    py_data: "{{ py314 }}"
+  when: python_314
