@@ -22,6 +22,7 @@ versions:
   py311: "3.11.13"
   py312: "3.12.11"
   py313: "3.13.7"
+  py314: "3.14.0"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -40,6 +41,7 @@ hashes:
   py311: "ec39a8018b9eedf6f0edeb44533bd279"
   py312: "9613d56b90d0d0cfd19980c7e2956a06"
   py313: "256cdb3bbf45cdce7499e52ba6c36ea3"
+  py314: "41389edaf9c643263cbed9b5ed307df8"
 
 ##
 # Specific python version details, based on the variables above
@@ -204,3 +206,13 @@ py313:
   sources: "/tmp/Python-{{ versions.py313 }}"
   install: "{{ base_install_folder }}/python{{ versions.py313 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py313 }}/bin/python3.13"
+
+py314:
+  version: "{{ versions.py314 }}"
+  major_version: "3.14"
+  url: "{{ ftp_url }}/{{ versions.py314 }}/Python-{{ versions.py314 }}.tar.xz"
+  md5: "{{ hashes.py314 }}"
+  tar_file: "/tmp/py{{ versions.py314 }}.tar.xz"
+  sources: "/tmp/Python-{{ versions.py314 }}"
+  install: "{{ base_install_folder }}/python{{ versions.py314 }}"
+  bin: "{{ base_install_folder }}/python{{ versions.py314 }}/bin/python3.14"
