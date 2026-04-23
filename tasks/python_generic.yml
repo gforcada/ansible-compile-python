@@ -11,7 +11,7 @@
   ansible.builtin.get_url:
     url: "{{ py_data.url }}"
     dest: "{{ py_data.tar_file }}"
-    checksum: "md5:{{ py_data.md5 }}"
+    checksum: "{{ py_data.hash_func }}:{{ py_data.md5 }}"
     mode: "0440"
   when: not already_installed.stat.exists
 
