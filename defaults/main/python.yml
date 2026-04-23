@@ -56,6 +56,7 @@ py24:
   sources: "/tmp/Python-{{ versions.py24 }}"
   install: "{{ base_install_folder }}/python{{ versions.py24 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py24 }}/bin/python2.4"
+  hash_func: "md5"
 
 py26:
   version: "{{ versions.py26 }}"
@@ -66,6 +67,7 @@ py26:
   sources: "/tmp/Python-{{ versions.py26 }}"
   install: "{{ base_install_folder }}/python{{ versions.py26 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py26 }}/bin/python2.6"
+  hash_func: "md5"
 
 py27:
   version: "{{ versions.py27 }}"
@@ -76,6 +78,7 @@ py27:
   sources: "/tmp/Python-{{ versions.py27 }}"
   install: "{{ base_install_folder }}/python{{ versions.py27 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py27 }}/bin/python2.7"
+  hash_func: "md5"
 
 py31:
   version: "{{ versions.py31 }}"
@@ -86,6 +89,7 @@ py31:
   sources: "/tmp/Python-{{ versions.py31 }}"
   install: "{{ base_install_folder }}/python{{ versions.py31 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py31 }}/bin/python3.1"
+  hash_func: "md5"
 
 py32:
   version: "{{ versions.py32 }}"
@@ -96,6 +100,7 @@ py32:
   sources: "/tmp/Python-{{ versions.py32 }}"
   install: "{{ base_install_folder }}/python{{ versions.py32 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py32 }}/bin/python3.4"
+  hash_func: "md5"
 
 py33:
   version: "{{ versions.py33 }}"
@@ -106,6 +111,7 @@ py33:
   sources: "/tmp/Python-{{ versions.py33 }}"
   install: "{{ base_install_folder }}/python{{ versions.py33 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py33 }}/bin/python3.3"
+  hash_func: "md5"
 
 py34:
   version: "{{ versions.py34 }}"
@@ -116,6 +122,7 @@ py34:
   sources: "/tmp/Python-{{ versions.py34 }}"
   install: "{{ base_install_folder }}/python{{ versions.py34 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py34 }}/bin/python3.4"
+  hash_func: "md5"
 
 py35:
   version: "{{ versions.py35 }}"
@@ -126,6 +133,7 @@ py35:
   sources: "/tmp/Python-{{ versions.py35 }}"
   install: "{{ base_install_folder }}/python{{ versions.py35 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py35 }}/bin/python3.5"
+  hash_func: "md5"
 
 py36:
   version: "{{ versions.py36 }}"
@@ -136,6 +144,7 @@ py36:
   sources: "/tmp/Python-{{ versions.py36 }}"
   install: "{{ base_install_folder }}/python{{ versions.py36 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py36 }}/bin/python3.6"
+  hash_func: "md5"
 
 py37:
   version: "{{ versions.py37 }}"
@@ -146,6 +155,7 @@ py37:
   sources: "/tmp/Python-{{ versions.py37 }}"
   install: "{{ base_install_folder }}/python{{ versions.py37 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py37 }}/bin/python3.7"
+  hash_func: "md5"
 
 py38:
   version: "{{ versions.py38 }}"
@@ -156,6 +166,7 @@ py38:
   sources: "/tmp/Python-{{ versions.py38 }}"
   install: "{{ base_install_folder }}/python{{ versions.py38 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py38 }}/bin/python3.8"
+  hash_func: "md5"
 
 py39:
   version: "{{ versions.py39 }}"
@@ -166,6 +177,7 @@ py39:
   sources: "/tmp/Python-{{ versions.py39 }}"
   install: "{{ base_install_folder }}/python{{ versions.py39 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py39 }}/bin/python3.9"
+  hash_func: "md5"
 
 py310:
   version: "{{ versions.py310 }}"
@@ -176,6 +188,7 @@ py310:
   sources: "/tmp/Python-{{ versions.py310 }}"
   install: "{{ base_install_folder }}/python{{ versions.py310 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py310 }}/bin/python3.10"
+  hash_func: "md5"
 
 py311:
   version: "{{ versions.py311 }}"
@@ -186,6 +199,7 @@ py311:
   sources: "/tmp/Python-{{ versions.py311 }}"
   install: "{{ base_install_folder }}/python{{ versions.py311 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py311 }}/bin/python3.11"
+  hash_func: "md5"
 
 py312:
   version: "{{ versions.py312 }}"
@@ -196,6 +210,7 @@ py312:
   sources: "/tmp/Python-{{ versions.py312 }}"
   install: "{{ base_install_folder }}/python{{ versions.py312 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py312 }}/bin/python3.12"
+  hash_func: "md5"
 
 py313:
   version: "{{ versions.py313 }}"
@@ -206,6 +221,7 @@ py313:
   sources: "/tmp/Python-{{ versions.py313 }}"
   install: "{{ base_install_folder }}/python{{ versions.py313 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py313 }}/bin/python3.13"
+  hash_func: "md5"
 
 py314:
   version: "{{ versions.py314 }}"
@@ -216,3 +232,4 @@ py314:
   sources: "/tmp/Python-{{ versions.py314 }}"
   install: "{{ base_install_folder }}/python{{ versions.py314 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py314 }}/bin/python3.14"
+  hash_func: "md5"
