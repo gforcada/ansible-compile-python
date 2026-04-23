@@ -18,11 +18,11 @@ versions:
   py37: "3.7.17"
   py38: "3.8.20"
   py39: "3.9.24"
-  py310: "3.10.19"
-  py311: "3.11.14"
-  py312: "3.12.12"
-  py313: "3.13.8"
-  py314: "3.14.0"
+  py310: "3.10.20"
+  py311: "3.11.15"
+  py312: "3.12.13"
+  py313: "3.13.13"
+  py314: "3.14.4"
 
 hashes:
   py24: "76083277f6c7e4d78992f36d7ad9018d"
@@ -37,11 +37,11 @@ hashes:
   py37: "dd94cab4541b57b88cf3dab32d6336e3"
   py38: "745478c81d6382cf46b5e7ad89e56008"
   py39: "d778f94c0f141ef1d9945f7452fa914d"
-  py310: "ff2739df51da5475e55dbf023d594894"
-  py311: "2f7d50f6e41d61607022dfeb7741df3a"
-  py312: "04feb01316c7bb1b448001adbc63dd23"
-  py313: "ba3da8187b03db6f42052f8707c22564"
-  py314: "41389edaf9c643263cbed9b5ed307df8"
+  py310: "de6517421601e39a9a3bc3e1bc4c7b2f239297423ee05e282598c83ec0647505"
+  py311: "272179ddd9a2e41a0fc8e42e33dfbdca0b3711aa5abf372d3f2d51543d09b625"
+  py312: "c08bc65a81971c1dd5783182826503369466c7e67374d1646519adf05207b684"
+  py313: "2ab91ff401783ccca64f75d10c882e957bdfd60e2bf5a72f8421793729b78a71"
+  py314: "d923c51303e38e249136fc1bdf3568d56ecb03214efdef48516176d3d7faaef8"
 
 ##
 # Specific python version details, based on the variables above
@@ -188,7 +188,7 @@ py310:
   sources: "/tmp/Python-{{ versions.py310 }}"
   install: "{{ base_install_folder }}/python{{ versions.py310 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py310 }}/bin/python3.10"
-  hash_func: "md5"
+  hash_func: "sha256"
 
 py311:
   version: "{{ versions.py311 }}"
@@ -199,7 +199,7 @@ py311:
   sources: "/tmp/Python-{{ versions.py311 }}"
   install: "{{ base_install_folder }}/python{{ versions.py311 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py311 }}/bin/python3.11"
-  hash_func: "md5"
+  hash_func: "sha256"
 
 py312:
   version: "{{ versions.py312 }}"
@@ -210,7 +210,7 @@ py312:
   sources: "/tmp/Python-{{ versions.py312 }}"
   install: "{{ base_install_folder }}/python{{ versions.py312 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py312 }}/bin/python3.12"
-  hash_func: "md5"
+  hash_func: "sha256"
 
 py313:
   version: "{{ versions.py313 }}"
@@ -221,7 +221,7 @@ py313:
   sources: "/tmp/Python-{{ versions.py313 }}"
   install: "{{ base_install_folder }}/python{{ versions.py313 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py313 }}/bin/python3.13"
-  hash_func: "md5"
+  hash_func: "sha256"
 
 py314:
   version: "{{ versions.py314 }}"
@@ -232,4 +232,4 @@ py314:
   sources: "/tmp/Python-{{ versions.py314 }}"
   install: "{{ base_install_folder }}/python{{ versions.py314 }}"
   bin: "{{ base_install_folder }}/python{{ versions.py314 }}/bin/python3.14"
-  hash_func: "md5"
+  hash_func: "sha256"
